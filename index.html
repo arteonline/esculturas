@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Creación de Muñecos Articulados</title>
+
+    <!-- ESTILOS Y FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS para animaciones de scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        grotesk: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#000000',
+                        darkCard: '#0a0a0a',
+                        neonPink: '#ccff00',
+                        neonCyan: '#ccff00',
+                        goldRef: '#ccff00',
+                        softPurple: '#aaff00'
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #f3e8f8;
+            overflow-x: hidden;
+        }
+
+        .bg-cyber {
+            background-image: radial-gradient(circle at 10% 20%, rgba(20, 20, 0, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(10, 15, 0, 0.9) 0%, transparent 40%),
+                linear-gradient(to bottom, #000000, #0a0a0a);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ccff00, #99ea00, #55aa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .text-gradient-pink {
+            background: linear-gradient(to right, #ccff00, #ccff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .neon-shadow {
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.4);
+        }
+
+        .neon-shadow-cyan {
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.2);
+        }
+
+        .pulse-btn {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(204, 255, 0, 0.8);
+                transform: scale(1.02);
+            }
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            opacity: 1;
+            padding-bottom: 1.25rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: #ccff00;
+        }
+
+        @keyframes emojiBounce {
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-3px) scale(1.1);
+            }
+        }
+
+        .emoji-animate {
+            display: inline-block;
+            animation: emojiBounce 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-cyber selection:bg-neonPink selection:text-black">
+
+    <!-- BANNER DE URGENCIA TOP -->
+    <div class="w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white text-center py-2 px-4 shadow-[0_4px_15px_rgba(239,68,68,0.5)] z-50 sticky top-0 flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest">
+        <span class="animate-pulse">⚠️</span> ALERTA: EL DESCUENTO Y LOS BONOS DESAPARECEN PRONTO <span class="animate-pulse">⚠️</span>
+    </div>
+
+    <!-- SECCIÓN 1: GANCHO / HERO (SIN BOTÓN) -->
+    <header class="relative pt-12 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center z-10 relative">
+
+            <div data-aos="fade-down" class="mb-4 inline-block">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs md:text-sm font-bold bg-darkCard border border-neonCyan/30 text-neonCyan shadow-[0_0_15px_rgba(0,240,255,0.2)] uppercase tracking-widest">
+                    <span class="animate-pulse">🟢</span> Ideal para: Ilustradores, Escultores y Artistas de Poses
+                </span>
+            </div>
+
+            <h1 data-aos="zoom-in" data-aos-delay="100" class="font-grotesk text-4xl md:text-6xl font-black leading-tight mb-6">
+                Dibuja Tu Próxima Pose con <br class="hidden md:block" />
+                <span class="text-gradient">Anatomía Real</span> Hoy Mismo...
+            </h1>
+
+            <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto font-medium">
+                Sin frustrarte buscando referencias rígidas en Pinterest, sin sufrir con fondos blancos imposibles de recortar, y <strong class="text-white">sin tirar meses de trabajo probando maniquíes caros.</strong>
+            </p>
+
+            <!-- Video Hero de Demostración Emocional -->
+            <div data-aos="fade-up" data-aos-delay="300" class="relative max-w-sm mx-auto rounded-2xl overflow-hidden border-2 border-neonPink/40 bg-darkCard neon-shadow aspect-[9/16]">
+                <!-- Marca de agua / Badge -->
+                <div class="absolute top-4 right-4 z-20 px-3 py-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-full text-xs font-bold text-white flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-neonCyan animate-pulse"></span> Calidad de Pose Real
+                </div>
+
+                <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover relative z-10 opacity-90 hover:opacity-100 transition-opacity">
+                    <source src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69db118d6769e8.91850168_videohero.mp4" type="video/mp4">
+                    <img src="hero_jpg_(12)" alt="Muñeco amarillo posando" class="w-full h-full object-cover">
+                </video>
+            </div>
+
+            <p data-aos="fade-up" data-aos-delay="400" class="mt-8 text-sm md:text-base text-gray-500 italic max-w-xl mx-auto">
+                "Este es el mismo método visual que los grandes artistas de concept art están usando en secreto para crear sus referencias."
+            </p>
+
+            <div class="mt-8 text-white animate-bounce">
+                <p class="text-sm uppercase tracking-widest font-bold text-gray-500 mb-2">Desliza para ver más</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 2: AGITACIÓN DEL PROBLEMA -->
+    <section class="py-20 px-4 bg-darkBg border-y border-neonPink/20">
+        <div class="max-w-4xl mx-auto">
+            <div data-aos="fade-up" class="text-center mb-12">
+                <h2 class="font-grotesk text-3xl md:text-5xl font-bold mb-4">La cruda realidad de conseguir poses dinámicas <br class="hidden md:block" /> <span class="text-red-500">que deslumbren.</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Punto 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-darkCard p-6 rounded-2xl border border-white/5 hover:border-red-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-4">
+                        <span class="text-2xl">⏳</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Pierdes Horas Buscando Poses</h3>
+                    <p class="text-gray-400 text-sm">Buscas referencias 'gratuitas' rígidas en internet. Pasas horas intentando adaptarlas al dibujo y el resultado siempre se ve poco profesional.</p>
+                </div>
+                <!-- Punto 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-darkCard p-6 rounded-2xl border border-white/5 hover:border-red-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-4">
+                        <span class="text-2xl">💸</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Costos Asfixiantes de Maniquíes</h3>
+                    <p class="text-gray-400 text-sm">Te compras maniquíes de madera baratos que no giran bien o modelos profesionales de $100+ dólares. Tu presupuesto de arte desaparece.</p>
+                </div>
+                <!-- Punto 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-darkCard p-6 rounded-2xl border border-white/5 hover:border-red-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-4">
+                        <span class="text-2xl">📉</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Te Quedas Atrás</h3>
+                    <p class="text-gray-400 text-sm">Mientras tú estás varado intentando entender la anatomía de una pose compleja, tu competencia acaba de lanzar 5 modelos en su tienda y se está llevando a tus clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: LA REVELACIÓN (SOLUCIÓN) Y CARRUSEL -->
+    <section class="py-24 px-4 bg-cyber">
+        <div class="max-w-5xl mx-auto">
+            <div data-aos="zoom-in" class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-neonCyan/20 border border-neonCyan text-neonCyan mb-4 uppercase tracking-widest">
+                    <span class="animate-pulse">✨</span> Atajo Definitivo
+                </span>
+                <h2 class="font-grotesk text-4xl md:text-5xl font-black mb-6">El Método de Creación de Muñecos con <span class="text-gradient">Anatomía Real</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">El método para crear tu propia herramienta de poses en casa, procesada, curada y <strong class="text-white underline decoration-neonPink drop-shadow-md decoration-4 underline-offset-4">lista para diseñar.</strong></p>
+            </div>
+
+            <!-- Carrusel Moderno -->
+            <div data-aos="fade-up" class="relative max-w-3xl mx-auto rounded-3xl overflow-hidden border border-neonPink/30 bg-darkCard shadow-[0_0_50px_rgba(232,48,140,0.15)] p-2">
+                <div id="modern-carousel" class="relative aspect-square rounded-2xl overflow-hidden bg-black">
+                    <!-- Imágenes -->
+                    <img src="proceso_1.jpg" alt="Paso 1 del Proceso" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'></svg>'; this.alt='Insertar Imagen 1 Aquí'" class="c-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-100 z-10">
+                    <img src="proceso_2.jpg" alt="Paso 2 del Proceso" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'></svg>'; this.alt='Insertar Imagen 2 Aquí'" class="c-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-0 translate-x-full">
+                    <img src="proceso_3.jpg" alt="Paso 3 del Proceso" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'></svg>'; this.alt='Insertar Imagen 3 Aquí'" class="c-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-0 translate-x-full">
+                    <img src="proceso_4.jpg" alt="Paso 4 del Proceso" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'></svg>'; this.alt='Insertar Imagen 4 Aquí'" class="c-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-0 translate-x-full">
+                    <img src="proceso_5.jpg" alt="Paso 5 del Proceso" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'></svg>'; this.alt='Insertar Imagen 5 Aquí'" class="c-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-0 translate-x-full">
+
+                    <!-- Controles -->
+                    <button onclick="moveCarousel(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/60 backdrop-blur border border-white/20 text-white flex items-center justify-center hover:bg-neonPink transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-6 h-6"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button onclick="moveCarousel(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/60 backdrop-blur border border-white/20 text-white flex items-center justify-center hover:bg-neonPink transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-6 h-6"><path d="m9 18 6-6-6-6" /></svg>
+                    </button>
+
+                    <!-- Etiqueta Flotante Inferior -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 px-6 py-2 bg-black/80 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold shadow-xl flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-neonCyan animate-pulse"></span> Ultra Articulación
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center mt-6 text-sm text-gray-500 italic">Materiales económicos y resultados dignos de un estudio 3D profesional.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4 DE VIDEO DEMOSTRATIVO (ADAPTACIÓN BAKI) -->
+    <section class="py-20 px-4 bg-darkBg border-y border-neonCyan/20 relative overflow-hidden">
+        <!-- Luz de fondo suave -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-neonCyan/5 blur-[120px] pointer-events-none rounded-full"></div>
+
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-right" class="relative rounded-2xl overflow-hidden border-2 border-neonCyan/40 bg-darkCard neon-shadow-cyan aspect-[4/5] md:aspect-square">
+                <!-- Etiqueta sobre el video -->
+                <div class="absolute top-4 left-4 z-20 px-4 py-1.5 bg-black/80 backdrop-blur border border-neonCyan/50 rounded-full text-xs font-bold text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neonCyan animate-ping"></span> Detalle de Articulación 100% Real
+                </div>
+
+                <video muted loop playsinline autoplay class="w-full h-full object-cover relative z-10 transition-transform duration-700 hover:scale-105">
+                    <source src="" type="video/mp4">
+                    <img src="video_muneco_ajedrez.mp4" alt="Muñeco amarillo ajedrez" class="w-full h-full object-cover">
+                </video>
+            </div>
+
+            <div data-aos="fade-left">
+                <div class="mb-4 inline-block px-4 py-1 rounded-full bg-neonCyan/10 border border-neonCyan/30 text-neonCyan text-xs font-bold tracking-widest uppercase">
+                    Anatomía Inteligente
+                </div>
+                <h2 class="font-grotesk text-3xl md:text-5xl font-black mb-6 leading-tight">
+                    Listos Para Tu Lienzo.<br>
+                    <span class="text-neonCyan">Listos Para Dibujar.</span>
+                </h2>
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                    El mayor dolor de cabeza de los artistas es entender la anatomía dinámica y las reglas de perspectiva sin una buena referencia de vida real.
+                </p>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                    Con esta metodología podrás armar tu propio muñeco, las horas desperdiciadas luchando contra escorzos difíciles terminan hoy. Simplemente logras la postura, fijas la articulación, iluminas, y <strong class="text-neonPink uppercase tracking-widest font-bold">empiezas a trazar tu obra maestra.</strong>
+                </p>
+
+                <ul class="space-y-4 bg-darkCard p-6 rounded-2xl border border-white/5">
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-neonCyan/20 flex items-center justify-center text-neonCyan font-bold text-lg">✓</div>
+                        <div>
+                            <p class="text-white font-bold leading-none mb-1">Poses que estallan</p>
+                            <p class="text-sm text-gray-400">Flexibilidad real de codos y hombros para posturas extremas de combate y deporte.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-neonPink/20 flex items-center justify-center text-neonPink font-bold text-lg">✓</div>
+                        <div>
+                            <p class="text-white font-bold leading-none mb-1">Cero referencias estáticas</p>
+                            <p class="text-sm text-gray-400">Pasa de dibujos tiesos a figuras con total peso visual y movimiento.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-lg">✓</div>
+                        <div>
+                            <p class="text-white font-bold leading-none mb-1">Universales</p>
+                            <p class="text-sm text-gray-400">Genial para dibujantes de cómic manga, concept artists, escultores y animadores 2D/3D.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EMOJIS ANIMADOS (CARACTERÍSTICAS) -->
+    <section class="py-16 px-4 bg-cyber">
+        <div class="max-w-3xl mx-auto">
+            <p data-aos="fade-up" class="text-lg md:text-2xl text-center text-gray-300 font-bold mb-10 max-w-2xl mx-auto">
+                La herramienta definitiva que no se consigue en ninguna tienda, construida con tus propias manos.
+                <strong class="text-neonPink">Método guiado paso a paso.</strong>
+            </p>
+
+            <div class="space-y-4 text-left max-w-xl mx-auto">
+                <!-- Característica 1 -->
+                <div data-aos="fade-up" data-aos-delay="50" class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">🎨</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Compatible con todos los estilos de dibujo</p>
+                        <p class="text-sm text-gray-400 mt-1">Realismo, cómic, cartoon o manga. El volumen base te sirve para cualquier canon anatómico.</p>
+                    </div>
+                </div>
+                <!-- Característica 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">💎</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Durabilidad Extrema</p>
+                        <p class="text-sm text-gray-400 mt-1">Reforzado para soportar horas de estudio, manipulación constante y torsión de articulaciones.</p>
+                    </div>
+                </div>
+                <!-- Característica 3 -->
+                <div data-aos="fade-up" data-aos-delay="150" class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">⚡</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Dominio de la Perspectiva</p>
+                        <p class="text-sm text-gray-400 mt-1">Coloca tu muñeco en escorzos salvajes para comprender volumen y profundidad al instante.</p>
+                    </div>
+                </div>
+                <!-- Característica 4 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">👕</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Base para ropa e iluminación</p>
+                        <p class="text-sm text-gray-400 mt-1">Ilumina físicamente a tu maniquí con una lámpara o vístelo para analizar pliegues de tela.</p>
+                    </div>
+                </div>
+                <!-- Característica 5 -->
+                <div data-aos="fade-up" data-aos-delay="250" class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">🕐</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Ahorra años de prueba y error anatómico</p>
+                        <p class="text-sm text-gray-400 mt-1">Dejarás de borrar y volver a dibujar el mismo brazo infinitas veces.</p>
+                    </div>
+                </div>
+                <!-- Característica 6 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">🛠️</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Construcción Sencilla y Divertida</p>
+                        <p class="text-sm text-gray-400 mt-1">Con materiales muy baratos que encuentras en cualquier parte. No necesitas herramientas eléctricas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: PRUEBA SOCIAL -->
+    <section class="py-20 px-4 bg-darkBg border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <!-- Contadores -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-center">
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up" data-to="30">30</span>+</div>
+                    <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Puntos Móviles</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up" data-to="2850">2,850</span>+</div>
+                    <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Alumnos</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up" data-to="4.9">4.9</span>/5</div>
+                    <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Satisfacción</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up" data-to="10">10</span>/10</div>
+                    <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Aprendizaje</div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up" class="font-grotesk text-3xl font-bold text-center mb-10"><span class="text-2xl">💬</span> Lo que dicen quienes ya rompieron su rigidez artística</h2>
+
+            <!-- Testimonios -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonio 1 -->
+                <div data-aos="fade-up" class="bg-darkCard p-6 rounded-2xl border border-white/10 hover:border-softPurple/50 transition-colors">
+                    <div class="flex gap-1 mb-3 text-goldRef">★★★★★</div>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">"Puse los muñecos articulados en mi escritorio y mis dibujos de acción quedaron con un nivel de poses impresionante. Estaba trabado con escorzos, y manipular el modelo en tiempo real me destrabó por completo."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-gradient-to-tr from-softPurple to-neonPink flex items-center justify-center font-bold text-white">C</div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Carlos M.</p>
+                            <p class="text-xs text-gray-500 flex items-center gap-1">🇲🇽 Ilustrador Freelance</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-darkCard p-6 rounded-2xl border border-white/10 hover:border-softPurple/50 transition-colors">
+                    <div class="flex gap-1 mb-3 text-goldRef">★★★★★</div>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">"Había gastado cientos de dólares en muñecos de Figma carísimos que no daban la torsión adecuada. Construir mi propio maniquí, a mi gusto y tamaño, es el mejor hack que he hecho para mi arte."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-gradient-to-tr from-neonCyan to-blue-500 flex items-center justify-center font-bold text-white">V</div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Valentina R.</p>
+                            <p class="text-xs text-gray-500 flex items-center gap-1">🇨🇴 Artista de Cómics</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 3 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-darkCard p-6 rounded-2xl border border-white/10 hover:border-softPurple/50 transition-colors">
+                    <div class="flex gap-1 mb-3 text-goldRef">★★★★★</div>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">"El curso lo vale peso por peso. Las explicaciones de cómo ensartar la goma interior en los codos está de 10. Mi portafolio de Concept Art empezó a mejorar mágicamente a las 2 semanas."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-gradient-to-tr from-orange-500 to-red-500 flex items-center justify-center font-bold text-white">A</div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Andrés P.</p>
+                            <p class="text-xs text-gray-500 flex items-center gap-1">🇪🇸 Diseñador de Personajes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: VALUE STACK Y OFERTA (BOTÓN DE COMPRA) -->
+    <section class="py-24 px-4 bg-cyber">
+        <div class="max-w-3xl mx-auto">
+            <div data-aos="zoom-in" class="bg-darkCard rounded-3xl p-8 md:p-12 border-2 border-neonPink neon-shadow relative overflow-hidden">
+                <!-- Cinta de urgencia superior -->
+                <div class="absolute top-0 left-0 w-full bg-neonPink text-white text-center py-1.5 text-xs md:text-sm font-black tracking-widest uppercase animate-pulse">
+                    🚨 Oferta Relámpago - Se acaba pronto 🚨
+                </div>
+
+                <div class="text-center mt-6">
+                    <h2 class="font-grotesk text-3xl md:text-4xl font-bold mb-8">Lo Que Te Llevas Hoy:</h2>
+
+                    <ul class="text-left space-y-4 mb-8 max-w-sm mx-auto">
+                        <li class="flex items-center text-gray-300"><span class="text-neonCyan mr-3 text-xl">✓</span> Acceso Inmediato al Curso Completo</li>
+                        <li class="flex items-center text-gray-300"><span class="text-neonCyan mr-3 text-xl">✓</span> Vectores de Poses y PNGs Exclusivos</li>
+                        <li class="flex items-center text-gray-300"><span class="text-neonCyan mr-3 text-xl">✓</span> Guías de Articulaciones Transparentes</li>
+                        <li class="flex items-center text-gray-300"><span class="text-neonCyan mr-3 text-xl">✓</span> Licencia de Poses Incluida</li>
+                        <li class="flex items-center text-gray-300"><span class="text-neonCyan mr-3 text-xl">✓</span> Actualizaciones de Curso Gratis</li>
+                    </ul>
+
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold text-red-500 mb-2">Esta Oferta Desaparece En:</h3>
+                        <div class="countdown-timer text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500 tabular-nums animate-pulse mb-6">
+                            14:40
+                        </div>
+                        <p class="text-gray-500 text-sm uppercase tracking-wider mb-2">Valor Real de Mercado: <span class="line-through text-lg">$78.00 USD</span></p>
+                        <p class="text-6xl md:text-8xl font-black text-white flex justify-center items-start">
+                            <span class="text-3xl md:text-5xl mt-2 mr-1 text-neonPink">$</span>4.95
+                        </p>
+                        <p class="text-neonPink font-bold mt-2">DÓLARES AMERICANOS - PAGO ÚNICO</p>
+                    </div>
+
+                    <a href="https://pay.hotmart.com/C105256880S" target="_blank" rel="noopener noreferrer" class="block w-full">
+                        <button class="pulse-btn w-full py-5 md:py-6 rounded-xl bg-gradient-to-r from-[#ccff00] to-[#55aa00] hover:from-[#aaff00] hover:to-[#55aa00] text-black font-black text-xl md:text-2xl transition-all shadow-[0_10px_20px_rgba(204,255,0,0.3)] hover:shadow-[0_15px_30px_rgba(204,255,0,0.5)] transform hover:-translate-y-1">
+                            ¡SÍ! QUIERO DESBLOQUEAR MIS POSES AHORA
+                        </button>
+                    </a>
+
+                    <div class="mt-6 flex flex-col items-center gap-2">
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check text-green-400"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg>
+                            Pago 100% Seguro por Hotmart
+                        </div>
+                        <p class="text-xs text-gray-500 italic">Recibes el acceso a tu cuenta en el curso en menos de 1 minuto tras el pago.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: DESTRUCCIÓN DE OBJECIONES (FAQ) -->
+    <section class="py-20 px-4 bg-darkBg border-t border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <h2 data-aos="fade-up" class="font-grotesk text-3xl md:text-4xl font-bold text-center mb-12">Respuestas Rápidas a Dudas Frecuentes</h2>
+
+            <div data-aos="fade-up" class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-item border border-white/10 bg-darkCard rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        ¿Es muy difícil construir el muñeco si no sé nada de escultura o manualidades?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-gray-400 text-sm">
+                        Totalmente diseñado para principiantes. Las piezas y materiales que usamos son increíblemente comunes, y voy lentamente ensamblando cada parte frente a la cámara para que te quede un modelo riguroso y perfecto, paso por paso.
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item border border-white/10 bg-darkCard rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        ¿Los materiales e insumos son muy costosos?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-gray-400 text-sm">
+                        De hecho, esa es la ventaja de este método. Te ahorrarás cientos de dólares en maniquíes comerciales, porque usaremos arcilla escolar, hilo elástico, alambre y bolas de madera o plástico hueco que cualquier papelería vende a centavos.
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item border border-white/10 bg-darkCard rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        ¿Qué pasa si compro y resulta que no me gusta o decido no seguir?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-gray-400 text-sm">
+                        Tienes la <strong>Garantía Hotmart de 7 Días</strong>. Tú compras hoy, entras y revisas todo; si por alguna extraña razón decides que tu nivel no mejorará con mi técnica, con un solo clic recibes tu dinero de vuelta, directo a tu cuenta. Riesgo $0.
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item border border-white/10 bg-darkCard rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        ¿Debo pagar mensualidades, o cuánto tiempo tengo para acabarlo?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-gray-400 text-sm">
+                        Es un pago EXCLUSIVO de una sola vez, para otorgarte acceso vitalicio o de por vida a la videoteca, permitiéndote verlo a cualquier hora, repetir y pausar desde cualquier teléfono móvil o PC que poseas.
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-item border border-white/10 bg-darkCard rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        ¿Dónde encuentro y accedo a la formación una vez pago?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-gray-400 text-sm">
+                        El pago es procesado y respaldado mundialmente por Hotmart, tan pronto la transacción pase tu email recibirá automáticamente y al instante al correo, tu propio enlace y credenciales para loguearte ilimitadamente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: URGENCIA FINAL Y FOOTER -->
+    <section class="py-16 px-4 bg-black border-t border-neonPink/30 relative overflow-hidden">
+        <div class="max-w-2xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl font-bold mb-4">Esta Oferta Desaparece En:</h2>
+            <div class="countdown-timer text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500 tabular-nums animate-pulse mb-8">
+                14:40
+            </div>
+            <a href="https://pay.hotmart.com/C105256880S" target="_blank" rel="noopener noreferrer" class="inline-block w-full max-w-sm">
+                <button class="pulse-btn w-full py-4 rounded-xl bg-neonPink hover:bg-[#aaff00] text-black font-black text-xl transition-all">
+                    COMPRAR POR $4.95
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 text-center text-xs text-gray-600 border-t border-white/5 pb-24 md:pb-8">
+        <p>© 2026 Curso de Creación de Muñecos Articulados para Poses de Dibujo — Todos los derechos reservados.</p>
+        <p class="mt-2 max-w-lg mx-auto">Este sitio no forma parte del sitio web de Facebook o Facebook Inc. Además, este sitio NO está respaldado por Facebook de ninguna manera. FACEBOOK es una marca comercial de FACEBOOK, Inc.</p>
+    </footer>
+
+    <!-- LOGICA BASE -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Toggle FAQ
+        function toggleFaq(btn) {
+            btn.parentElement.classList.toggle('active');
+        }
+
+        // Carousel Simple Logic
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.c-slide');
+        
+        function moveCarousel(direction) {
+            if (!slides || slides.length === 0) return;
+            
+            // Ocultar actual
+            slides[currentIndex].classList.remove('opacity-100', 'z-10');
+            slides[currentIndex].classList.add('opacity-0');
+            
+            // Actualizar indice
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            
+            // Mostrar nuevo
+            slides[currentIndex].classList.remove('opacity-0', 'translate-x-full', '-translate-x-full');
+            slides[currentIndex].classList.add('opacity-100', 'z-10');
+        }
+
+        // Timer Simple (Visual Solo)
+        function startTimer() {
+            let timeLeft = 14 * 60 + 40; // 14:40 en segundos
+            const timers = document.querySelectorAll('.countdown-timer');
+            
+            setInterval(() => {
+                if(timeLeft <= 0) timeLeft = 59 * 60; // Reset a los 59 mins en zero
+                timeLeft--;
+                
+                let m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+                let s = (timeLeft % 60).toString().padStart(2, '0');
+                
+                timers.forEach(t => t.innerText = `${m}:${s}`);
+            }, 1000);
+        }
+        
+        document.addEventListener('DOMContentLoaded', startTimer);
+    </script>
+</body>
+</html>
