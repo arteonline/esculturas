@@ -1,1395 +1,1093 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Arsenal Anime — +45,000 Diseños HD Para Sublimadores</title>
-
-    <!-- PRECARGA RECURSOS CRITICOS -->
-    <link rel="preload" as="image"
-        href="https://res.cloudinary.com/daijidw3t/video/upload/f_auto,q_auto/Camisetas3mod_t79kiq.jpg"
-        fetchpriority="high">
-    <link rel="preconnect" href="https://res.cloudinary.com">
-    <link rel="preconnect" href="https://d1yei2z3i6k35z.cloudfront.net">
-
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = [];
-            setTimeout(function() {
-                t = b.createElement(e); t.async = !0;
-                t.src = v; s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s);
-            }, 3000);
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1406880024051799');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1406880024051799&ev=PageView&noscript=1" /></noscript>
-
-    <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
-
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <title>CRIATURA — Escultura en Porcelana Fría | Crea tu primera figura de colección</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-        /* =============================================
-           DESIGN SYSTEM — PALETA EDITORIAL
-           Negro profundo + Blanco + Naranja fuego
-        ============================================= */
         :root {
-            --bg:        #0a0a0a;
-            --bg-card:   #111111;
-            --bg-raised: #181818;
-            --border:    #2a2a2a;
-            --border-light: #333333;
-            --text:      #f0f0f0;
-            --text-muted:#8a8a8a;
-            --text-dim:  #555555;
-            --orange:    #FF5500;
-            --orange-hot:#FF7A00;
-            --orange-glow: rgba(255, 85, 0, 0.25);
-            --white:     #ffffff;
-            --red-alert: #E53E3E;
+            --bg:           #f5f0e8;
+            --bg-dark:      #1c1208;
+            --ink:          #1c1208;
+            --ink-muted:    #6b5c48;
+            --cream:        #faf7f2;
+            --terracotta:   #c4603a;
+            --terracotta-lt:#e07a54;
+            --gold:         #b8922a;
+            --gold-lt:      #d4aa40;
+            --sage:         #5a7a5c;
+            --sage-lt:      #7a9e7c;
+            --border:       rgba(28,18,8,0.12);
+            --shadow-warm:  0 8px 40px rgba(28,18,8,0.12);
+            --shadow-deep:  0 20px 80px rgba(28,18,8,0.2);
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-        html { font-size: 16px; scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
+            background: var(--bg);
+            color: var(--ink);
             font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* TIPOGRAFÍA */
-        .font-display {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-            line-height: 0.95;
-        }
-
-        /* UTILIDADES */
-        .max-w-5xl { max-width: 64rem; margin-left: auto; margin-right: auto; }
-        .max-w-4xl { max-width: 56rem; margin-left: auto; margin-right: auto; }
-        .max-w-3xl { max-width: 48rem; margin-left: auto; margin-right: auto; }
-        .max-w-2xl { max-width: 40rem; margin-left: auto; margin-right: auto; }
-        .max-w-xl  { max-width: 36rem; margin-left: auto; margin-right: auto; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .text-center { text-align: center; }
-
-        /* GRADIENTE NARANJA */
-        .text-orange {
-            background: linear-gradient(135deg, var(--orange), var(--orange-hot));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* PILL LABEL */
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.35rem 1rem;
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            border: 1px solid var(--border-light);
-            background: var(--bg-card);
-            color: var(--text-muted);
-        }
-        .pill .dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--orange);
-            animation: pulseOrb 1.5s ease-in-out infinite;
-        }
-
-        /* BOTÓN CTA PRINCIPAL */
-        .btn-cta {
-            display: block;
-            width: 100%;
-            padding: 1.25rem 2rem;
-            background: var(--orange);
-            color: #fff;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            border: none;
-            border-radius: 0.75rem;
-            cursor: pointer;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-            animation: ctaPulse 2.5s ease-in-out infinite;
+        /* ── ANNOUNCEMENT BAR ── */
+        .ann-bar {
+            background: var(--bg-dark);
+            color: var(--gold-lt);
             text-align: center;
-            text-decoration: none;
-        }
-        .btn-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(255, 85, 0, 0.5);
-        }
-        .btn-cta:active { transform: translateY(0); }
-
-        /* CARD */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            transition: border-color 0.2s ease;
-        }
-        .card:hover { border-color: var(--border-light); }
-
-        /* DIVISOR */
-        .divider {
-            width: 100%;
-            height: 1px;
-            background: var(--border);
-        }
-
-        /* FAQ */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-            opacity: 0;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            opacity: 1;
-            padding-bottom: 1.25rem;
-        }
-        .faq-item.active .faq-icon { transform: rotate(180deg); color: var(--orange); }
-        .faq-icon { transition: transform 0.3s ease, color 0.2s ease; }
-
-        /* CARRUSEL */
-        .c-slide {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        /* STAT NUMBERS */
-        .stat-num {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            line-height: 1;
-            color: var(--white);
-        }
-        .stat-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
+            padding: 11px 20px;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            font-weight: 500;
             text-transform: uppercase;
-            color: var(--orange);
-            margin-top: 0.35rem;
         }
+        .ann-bar span { color: #fff; }
 
-        /* CHECKMARK ITEM */
-        .check-item {
+        /* ── HEADER ── */
+        header {
+            padding: 28px 0 24px;
             display: flex;
-            align-items: flex-start;
-            gap: 0.875rem;
-        }
-        .check-icon {
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: rgba(255, 85, 0, 0.15);
-            border: 1px solid var(--orange);
-            color: var(--orange);
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
             font-weight: 900;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        /* GRID RESPONSIVE */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-            .grid-2 { grid-template-columns: 1fr 1fr; align-items: center; }
-            .grid-4 { grid-template-columns: repeat(4, 1fr); }
-            .md-hide { display: none; }
-            .md-show { display: block; }
-            .btn-cta { font-size: 1.75rem; }
-        }
-
-        /* STICKY TOP BAR */
-        .top-bar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--red-alert);
-            color: #fff;
-            text-align: center;
-            padding: 0.6rem 1rem;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
+            color: var(--ink);
             text-transform: uppercase;
         }
+        .logo em {
+            font-style: italic;
+            color: var(--terracotta);
+        }
 
-        /* SECCIÓN HERO */
+        /* ── HERO ── */
         .hero {
-            padding: 4rem 1rem 5rem;
+            background: var(--cream);
+            padding: 80px 20px 70px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
         .hero::before {
             content: '';
             position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,85,0,0.06) 0%, transparent 70%);
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(196,96,58,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
-
-        /* SECCIÓN ALTERNADA */
-        .section { padding: 5rem 1rem; }
-        .section-dark { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-        /* VIDEO */
-        .video-wrap {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            background: var(--bg-card);
-        }
-        .video-badge {
-            position: absolute;
-            top: 0.875rem;
-            right: 0.875rem;
-            z-index: 20;
-            padding: 0.3rem 0.75rem;
-            background: rgba(0,0,0,0.8);
-            border: 1px solid var(--border-light);
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .video-badge .star { color: #F6C90E; }
-
-        /* PROBLEMA */
-        .problem-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            transition: border-color 0.2s;
-        }
-        .problem-card:hover { border-color: rgba(229, 62, 62, 0.4); }
-        .problem-icon {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            background: rgba(229, 62, 62, 0.08);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* FEATURE ROW */
-        .feature-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            border-radius: 0.875rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            transition: border-color 0.2s;
-        }
-        .feature-row:hover { border-color: var(--border-light); }
-        .feature-emoji { font-size: 1.75rem; flex-shrink: 0; margin-top: 0.1rem; }
-
-        /* OFERTA BOX */
-        .offer-box {
-            background: var(--bg-card);
-            border: 2px solid var(--orange);
-            border-radius: 1.25rem;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 60px rgba(255, 85, 0, 0.12);
-        }
-        .offer-ribbon {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            background: var(--orange);
+        .hero-tag {
+            display: inline-block;
+            background: var(--terracotta);
             color: #fff;
-            text-align: center;
-            padding: 0.6rem;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        /* TESTIMONIAL */
-        .testi-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            transition: border-color 0.2s;
-        }
-        .testi-card:hover { border-color: var(--border-light); }
-        .testi-stars { color: #F6C90E; font-size: 0.875rem; letter-spacing: 0.1em; margin-bottom: 0.875rem; }
-        .testi-avatar {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800;
-            font-size: 0.875rem;
-            color: #fff;
-        }
-
-        /* WHY CHEAP SECTION */
-        .why-cheap {
-            background: var(--bg-raised);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--orange);
-            border-radius: 0.875rem;
-            padding: 1.5rem;
-        }
-
-        /* PRECIO */
-        .price-tag {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(4rem, 12vw, 7rem);
-            line-height: 1;
-            color: var(--white);
-        }
-        .price-dollar {
-            font-size: 0.45em;
-            vertical-align: super;
-            color: var(--orange);
-        }
-
-        /* URGENCIA FINAL */
-        .final-urgency {
-            background: #0a0a0a;
-            border-top: 1px solid var(--border);
-            padding: 4rem 1rem;
-        }
-        .final-timer {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(4rem, 15vw, 6rem);
-            background: linear-gradient(135deg, var(--red-alert), #FF8C00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 0.04em;
-            line-height: 1;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #050505;
-            border-top: 1px solid var(--border);
-            padding: 2rem 1rem;
-            text-align: center;
-            color: var(--text-dim);
             font-size: 0.75rem;
-            line-height: 1.8;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 2px;
+            margin-bottom: 32px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--ink);
+            max-width: 820px;
+            margin: 0 auto 20px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--terracotta);
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--ink-muted);
+            max-width: 640px;
+            margin: 0 auto 48px;
+            font-weight: 400;
+        }
+        .hero-sub strong { color: var(--ink); font-weight: 600; }
+
+        .video-frame {
+            max-width: 380px;
+            width: 100%;
+            margin: 0 auto 40px;
+            aspect-ratio: 3/4;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep), 0 0 0 6px var(--cream), 0 0 0 7px var(--border);
+            position: relative;
+            background: #111;
+        }
+        .video-frame video {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            position: absolute; inset: 0;
         }
 
-        /* SECURITY BADGES */
-        .security-row {
+        .hero-proof {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            flex-wrap: wrap;
+        }
+        .hero-proof span { display: flex; align-items: center; gap: 6px; }
+        .hero-proof .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+
+        /* ── SECTION WRAPPER ── */
+        .section { padding: 90px 20px; }
+        .section.dark {
+            background: var(--bg-dark);
+            color: #f0e8d8;
+        }
+        .section.dark .ink-muted { color: #a89880; }
+        .container { max-width: 980px; margin: 0 auto; }
+        .container-sm { max-width: 720px; margin: 0 auto; }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 16px;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .section-title em { font-style: italic; color: var(--terracotta); }
+
+        /* ── PAIN SECTION ── */
+        .pain-intro {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .pain-card {
+            background: var(--cream);
+            padding: 36px 32px;
+            transition: background 0.25s;
+        }
+        .pain-card:hover { background: #fff; }
+        .pain-icon {
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .pain-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+        .pain-desc {
+            font-size: 0.92rem;
+            color: var(--ink-muted);
+            line-height: 1.65;
+        }
+
+        /* ── PROCESS VIDEO ── */
+        .process-video-wrap {
+            max-width: 380px;
+            width: 100%;
+            margin: 0 auto;
+            aspect-ratio: 3/4;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            position: relative;
+            background: #111;
+        }
+        .process-video-wrap video {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            position: absolute; inset: 0;
+        }
+        .process-caption {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            font-style: italic;
+        }
+
+        /* ── WHAT YOU LEARN ── */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .module-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 32px 28px;
+            background: #fff;
+            transition: all 0.25s;
+            position: relative;
+        }
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--terracotta);
+            border-radius: 6px 6px 0 0;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .module-card:hover { box-shadow: var(--shadow-warm); transform: translateY(-3px); }
+        .module-card:hover::before { opacity: 1; }
+        .module-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--border);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .module-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+        .module-desc {
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            line-height: 1.6;
+        }
+
+        /* ── GALLERY ── */
+        .gallery-label {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #a89880;
+            margin-bottom: 32px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .gallery-item {
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            position: relative;
+            background: #2a1f14;
+        }
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+            opacity: 0.92;
+        }
+        .gallery-item:hover img { transform: scale(1.04); }
+
+        /* ── INSTRUCTOR ── */
+        .instructor-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .instructor-img-wrap {
+            aspect-ratio: 4/5;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #2a1f14;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            margin-top: 1rem;
         }
-        .security-row svg { color: #48BB78; }
-
-        /* SCROLL ARROW */
-        .scroll-arrow {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 2.5rem;
-            color: var(--text-dim);
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            animation: bounceDown 2s ease-in-out infinite;
+        .instructor-placeholder {
+            color: #a89880;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 40px;
+            font-style: italic;
+            line-height: 1.7;
         }
-
-        /* =============================================
-           ANIMACIONES
-        ============================================= */
-        @keyframes pulseOrb {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50%       { opacity: 0.6; transform: scale(0.85); }
+        .instructor-img-wrap img {
+            width: 100%; height: 100%;
+            object-fit: cover;
         }
-        @keyframes ctaPulse {
-            0%, 100% { box-shadow: 0 6px 30px rgba(255, 85, 0, 0.35); }
-            50%       { box-shadow: 0 10px 50px rgba(255, 85, 0, 0.65); }
-        }
-        @keyframes bounceDown {
-            0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(6px); }
-        }
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* NOISE TEXTURE OVERLAY */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-            opacity: 0.022;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        /* CARRUSEL CONTROLES */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 30;
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.7);
-            border: 1px solid var(--border-light);
-            color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .carousel-btn:hover { background: var(--orange); }
-        .carousel-btn-left  { left: 0.875rem; }
-        .carousel-btn-right { right: 0.875rem; }
-
-        /* INLINE FLEX UTILS */
-        .inline-flex { display: inline-flex; align-items: center; }
-        .flex { display: flex; align-items: center; }
-        .flex-col { flex-direction: column; }
-        .items-start { align-items: flex-start; }
-        .gap-2 { gap: 0.5rem; }
-        .gap-3 { gap: 0.75rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-6 { gap: 1.5rem; }
-        .gap-8 { gap: 2rem; }
-        .mb-1 { margin-bottom: 0.25rem; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-3 { margin-bottom: 0.75rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-10 { margin-bottom: 2.5rem; }
-        .mb-12 { margin-bottom: 3rem; }
-        .mt-2 { margin-top: 0.5rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mt-10 { margin-top: 2.5rem; }
-        .w-full { width: 100%; }
-        .block { display: block; }
-        .relative { position: relative; }
-        .overflow-hidden { overflow: hidden; }
-
-        /* SEPARADOR VISUAL */
-        .orange-bar {
-            width: 48px; height: 4px;
-            background: var(--orange);
-            border-radius: 2px;
-            margin: 1rem auto;
-        }
-
-        /* VALUE LIST */
-        .value-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.875rem;
-            text-align: left;
-            max-width: 28rem;
-            margin: 0 auto 2rem;
-        }
-        .value-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.875rem;
-            color: #d0d0d0;
-            font-size: 0.95rem;
-        }
-        .value-list li span.tick {
-            color: var(--orange);
-            font-size: 1.1rem;
+        .instructor-text .eyebrow { color: var(--gold-lt); }
+        .instructor-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             font-weight: 900;
-            flex-shrink: 0;
+            color: #f0e8d8;
+            margin-bottom: 6px;
+        }
+        .instructor-role {
+            font-size: 0.85rem;
+            color: var(--gold-lt);
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+        .instructor-bio {
+            font-size: 0.95rem;
+            color: #c8b89a;
+            line-height: 1.75;
+        }
+        .instructor-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold-lt);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.78rem;
+            color: #a89880;
+            margin-top: 4px;
         }
 
-        /* FAQ */
-        .faq-wrap { display: flex; flex-direction: column; gap: 0.75rem; }
-        .faq-item {
-            border: 1px solid var(--border);
-            background: var(--bg-card);
-            border-radius: 0.875rem;
-            overflow: hidden;
-            transition: border-color 0.2s;
+        /* ── TESTIMONIALS ── */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
-        .faq-item.active { border-color: var(--border-light); }
-        .faq-btn {
-            width: 100%;
+        .testimonial-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 32px 28px;
+            position: relative;
+        }
+        .testimonial-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--terracotta);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: -12px;
+        }
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+        .testimonial-text {
+            font-size: 0.92rem;
+            color: var(--ink-muted);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+        .testimonial-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+        .testimonial-tag {
+            font-size: 0.78rem;
+            color: var(--sage);
+            font-weight: 600;
+        }
+        .testimonial-note {
+            font-size: 0.75rem;
+            color: #bbb;
+            margin-top: 4px;
+        }
+
+        /* ── OFFER ── */
+        .offer-section {
+            background: var(--bg-dark);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .offer-box {
+            max-width: 680px;
+            margin: 0 auto;
+            border: 1px solid rgba(184,146,42,0.4);
+            border-radius: 8px;
+            padding: 60px 40px;
+            background: rgba(255,255,255,0.03);
+            position: relative;
+        }
+        .offer-tag {
+            display: inline-block;
+            background: var(--terracotta);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 2px;
+            margin-bottom: 28px;
+        }
+        .offer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 900;
+            color: #f0e8d8;
+            margin-bottom: 36px;
+            line-height: 1.2;
+        }
+        .offer-title em { font-style: italic; color: var(--gold-lt); }
+
+        .offer-includes {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .offer-includes-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #a89880;
+            margin-bottom: 20px;
+        }
+        .offer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .offer-check {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: rgba(90,122,92,0.25);
+            border: 1px solid var(--sage);
+            color: var(--sage-lt);
+            font-size: 0.7rem;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 1.1rem 1.25rem;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-align: left;
-            cursor: pointer;
-            transition: color 0.2s;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
-        .faq-btn:hover { color: var(--orange); }
-        .faq-answer { padding: 0 1.25rem; color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; }
+        .offer-item-text {
+            font-size: 0.92rem;
+            color: #c8b89a;
+            line-height: 1.5;
+        }
+        .offer-item-text strong { color: #f0e8d8; font-weight: 600; }
 
-        /* WHY SO CHEAP */
-        .cheap-label {
-            display: inline-block;
-            padding: 0.2rem 0.7rem;
-            background: rgba(255,85,0,0.12);
-            border: 1px solid rgba(255,85,0,0.3);
-            border-radius: 4px;
-            color: var(--orange);
-            font-size: 0.72rem;
-            font-weight: 800;
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 32px 0;
+        }
+
+        .price-wrap {
+            margin-bottom: 36px;
+        }
+        .price-old {
+            font-size: 1.1rem;
+            color: #a89880;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        .price-label {
+            font-size: 0.78rem;
+            color: var(--gold-lt);
+            font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
+            margin-bottom: 6px;
+        }
+        .price-new {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #f0e8d8;
+            line-height: 1;
+        }
+        .price-currency {
+            font-size: 1.8rem;
+            vertical-align: super;
+            font-weight: 700;
         }
 
-        /* STRIKETHROUGH */
-        .strike {
-            text-decoration: line-through;
-            color: var(--text-dim);
-            font-size: 0.9em;
-        }
-
-        /* LIVE DOT */
-        .live-dot {
+        .cta-btn {
             display: inline-block;
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: #48BB78;
-            animation: pulseOrb 1.5s ease-in-out infinite;
+            background: var(--terracotta);
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 20px 48px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.25s;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: 0 6px 24px rgba(196,96,58,0.4);
+        }
+        .cta-btn:hover {
+            background: var(--terracotta-lt);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(196,96,58,0.5);
+        }
+        .cta-sub {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #a89880;
+        }
+        .cta-sub a { color: var(--gold-lt); }
+
+        /* ── FAQ ── */
+        .faq-list {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .faq-q {
+            padding: 22px 28px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.05rem;
+            color: var(--ink);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .faq-q:hover { background: #fdf9f4; }
+        .faq-q::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--terracotta);
+            font-weight: 300;
+            flex-shrink: 0;
+            transition: transform 0.25s;
+        }
+        .faq-item.open .faq-q::after { transform: rotate(45deg); }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.25s;
+            font-size: 0.92rem;
+            color: var(--ink-muted);
+            line-height: 1.7;
+            padding: 0 28px;
+        }
+        .faq-item.open .faq-a {
+            max-height: 400px;
+            padding: 0 28px 24px;
+        }
+
+        /* ── GUARANTEE ── */
+        .guarantee-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+            background: rgba(90,122,92,0.1);
+            border: 1px solid rgba(90,122,92,0.3);
+            border-radius: 6px;
+            padding: 36px 40px;
+            max-width: 680px;
+            margin: 48px auto 0;
+            text-align: left;
+        }
+        .guarantee-icon {
+            font-size: 2.8rem;
             flex-shrink: 0;
         }
-
-        /* HEADLINE SIZE HELPERS */
-        .text-hero {
-            font-size: clamp(2.8rem, 9vw, 6.5rem);
+        .guarantee-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            color: #f0e8d8;
+            margin-bottom: 8px;
         }
-        .text-h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .guarantee-text {
+            font-size: 0.88rem;
+            color: #a89880;
+            line-height: 1.65;
         }
-        .text-h3 {
-            font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-        }
-        .text-body { font-size: 1rem; line-height: 1.7; color: var(--text-muted); }
-        .text-sm { font-size: 0.875rem; }
-        .text-xs { font-size: 0.75rem; }
-        .text-muted { color: var(--text-muted); }
-        .text-dim { color: var(--text-dim); }
-        .text-white { color: #fff; }
-        .text-orange-c { color: var(--orange); }
-        .text-red { color: var(--red-alert); }
-        .font-bold { font-weight: 700; }
-        .font-black { font-weight: 900; }
-        .italic { font-style: italic; }
-        .uppercase { text-transform: uppercase; }
-        .tracking-wide { letter-spacing: 0.08em; }
 
-        /* HELPER */
-        .space-y-4 > * + * { margin-top: 1rem; }
-        .space-y-3 > * + * { margin-top: 0.75rem; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .leading-relaxed { line-height: 1.7; }
-        .shrink-0 { flex-shrink: 0; }
-
-        /* STARS */
-        .stars { color: #F6C90E; letter-spacing: 0.05em; }
-
-        /* PROBLEM STORY  */
-        .story-block {
-            background: var(--bg-raised);
-            border-left: 3px solid var(--red-alert);
-            border-radius: 0 0.75rem 0.75rem 0;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            line-height: 1.75;
-            color: #c0c0c0;
-        }
-        .story-block strong { color: #fff; }
-
-        /* GRID STATS */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+        /* ── FOOTER ── */
+        footer {
+            background: var(--bg-dark);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px 20px;
             text-align: center;
+            color: #a89880;
+            font-size: 0.82rem;
         }
-        @media(min-width:768px) {
-            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+        footer a { color: var(--gold-lt); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #f0e8d8;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
         }
 
-        /* FINAL SECTION ORANGE GLOW */
-        .final-urgency-inner {
-            max-width: 40rem;
-            margin: 0 auto;
-            text-align: center;
-        }
+        /* ── UTILITIES ── */
+        .text-center { text-align: center; }
+        .mt-8 { margin-top: 8px; }
+        .mt-16 { margin-top: 16px; }
+        .mt-24 { margin-top: 24px; }
+        .mt-40 { margin-top: 40px; }
+        .mb-8 { margin-bottom: 8px; }
+        .mb-0 { margin-bottom: 0; }
 
-        /* Hover effect on feature rows */
-        .feature-row { cursor: default; }
+        /* ── RESPONSIVE ── */
+        @media (max-width: 720px) {
+            .instructor-block { grid-template-columns: 1fr; gap: 40px; }
+            .instructor-img-wrap { aspect-ratio: 1/1; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid .gallery-item:last-child { display: none; }
+            .offer-box { padding: 40px 24px; }
+            .guarantee-block { flex-direction: column; gap: 16px; padding: 28px 24px; }
+        }
+        @media (max-width: 480px) {
+            .hero-proof { gap: 12px; flex-direction: column; align-items: flex-start; padding: 0 20px; }
+            .instructor-stats { flex-direction: column; gap: 20px; }
+        }
     </style>
-</head>
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1889056241733478');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1889056241733478&ev=PageView&noscript=1"/></noscript>
+</head>
 <body>
 
-    <!-- ▌ BARRA SUPERIOR STICKY -->
-    <div class="top-bar">
-        <span style="animation: pulseOrb 1s infinite; display:inline-block; margin-right:0.4rem">⚠</span>
-        ATENCIÓN: Esta oferta y el precio de $4.95 desaparecen cuando el contador llegue a cero
-        <span style="animation: pulseOrb 1s infinite; display:inline-block; margin-left:0.4rem">⚠</span>
+    <!-- ANNOUNCEMENT BAR (honesta, sin urgencia falsa) -->
+    <div class="ann-bar">
+        Acceso inmediato · <span>Hotmart</span> · Pago 100% seguro · Garantía de 7 días
     </div>
 
-    <!-- ▌ SECCIÓN 1 — HERO / GANCHO -->
-    <header class="hero">
-        <div class="max-w-4xl">
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Criatura<em>.</em></div>
+    </header>
 
-            <!-- PILL LABEL -->
-            <div class="text-center mb-6" data-aos="fade-down">
-                <span class="pill">
-                    <span class="dot"></span>
-                    Para Sublimadores &amp; Estampadores
-                </span>
-            </div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-tag">Curso de Escultura · Porcelana Fría</span>
+            <h1>Crea tu primera figura de colección en porcelana fría —<em> aunque nunca hayas tocado una herramienta de escultura</em></h1>
+            <p class="hero-sub">
+                El método paso a paso para construir criaturas, personajes y piezas de nivel exposición
+                <strong>con materiales que consigues en cualquier ferretería.</strong>
+            </p>
 
-            <!-- HEADLINE PRINCIPAL -->
-            <div class="text-center mb-6" data-aos="zoom-in" data-aos-delay="80">
-                <h1 class="font-display text-hero text-white">
-                    Deja de perder noches<br>
-                    borrando fondos en<br>
-                    <span class="text-orange">Photoshop.</span>
-                </h1>
-            </div>
-
-            <!-- SUBTÍTULO — LA LÍNEA SECRETA QUE ESTABA ENTERRADA -->
-            <div class="text-center mb-4" data-aos="fade-up" data-aos-delay="160">
-                <p style="font-size: clamp(1rem, 2.5vw, 1.3rem); color: #c8c8c8; max-width: 38rem; margin: 0 auto; line-height: 1.6; font-weight: 500;">
-                    El mismo catálogo que las grandes tiendas de merch del mundo usan en secreto para inundar el mercado —
-                    <strong style="color:#fff">ahora disponible para sublimadores independientes por primera vez.</strong>
-                </p>
-            </div>
-
-            <!-- MICRO-PRUEBA DEBAJO DEL SUBTÍTULO -->
-            <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="200">
-                <p class="text-sm text-muted italic">
-                    +45,000 diseños HD · Fondo transparente listo · Licencia comercial incluida · Entrega inmediata
-                </p>
-            </div>
-
-            <!-- VIDEO HERO -->
-            <div class="video-wrap mb-6" style="max-width:44rem; margin-left:auto; margin-right:auto; aspect-ratio:16/9;" data-aos="fade-up" data-aos-delay="240">
-                <div class="video-badge">
-                    <span class="star">★</span> Calidad Real — Sin Píxeles
-                </div>
-                <video loop muted playsinline preload="none"
-                    poster="https://res.cloudinary.com/daijidw3t/video/upload/f_auto,q_auto/Camisetas3mod_t79kiq.jpg"
-                    class="lazy-video"
-                    style="width:100%;height:100%;object-fit:cover;display:block;">
-                    <source src="https://res.cloudinary.com/daijidw3t/video/upload/f_auto,q_auto/Camisetas3mod_t79kiq">
+            <div class="video-frame">
+                <video autoplay loop muted playsinline>
+                    <source src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7be8cdb07d0.65004765_Video_de_Escultura_Generado.mp4" type="video/mp4">
                 </video>
             </div>
 
-            <!-- SCROLL ARROW -->
-            <div class="scroll-arrow">
-                <span>Descubre lo que hay adentro</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            <div class="hero-proof">
+                <span><span class="dot"></span> Para principiantes absolutos</span>
+                <span><span class="dot"></span> Materiales accesibles y baratos</span>
+                <span><span class="dot"></span> Desde criaturas hasta figuras realistas</span>
             </div>
-
-        </div>
-    </header>
-
-    <!-- ▌ SECCIÓN 2 — AGITACIÓN DEL PROBLEMA (con micro-historias) -->
-    <section class="section section-dark">
-        <div class="max-w-4xl px-4">
-
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="font-display text-h2 text-white mb-3">
-                    La realidad que nadie<br>te cuenta sobre<br>
-                    <span class="text-red">conseguir diseños que vendan.</span>
-                </h2>
-                <div class="orange-bar"></div>
-            </div>
-
-            <div class="grid-3 mb-8">
-
-                <div class="problem-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="problem-icon">⏳</div>
-                    <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Las 11pm de Photoshop</h3>
-                    <p class="text-body text-sm">
-                        Son las 11 de la noche. Llevas 2 horas intentando recortar el fondo de un Naruto
-                        que bajaste de Google. El cliente lo quiere mañana. El resultado final
-                        se ve como parche blanco sobre la tela. <strong style="color:#ddd">Tiemblas de frustración.</strong>
-                    </p>
-                </div>
-
-                <div class="problem-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="problem-icon">💸</div>
-                    <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">$20 por un solo diseño</h3>
-                    <p class="text-body text-sm">
-                        Contratas a un diseñador en Fiverr. Te cobra $15 o $20 por
-                        <em>un solo PNG</em>. Tarda 3 días. El margen de tu camiseta
-                        de $18 queda en cero. <strong style="color:#ddd">Empezaste a vender para perder plata.</strong>
-                    </p>
-                </div>
-
-                <div class="problem-card" data-aos="fade-up" data-aos-delay="240">
-                    <div class="problem-icon">📉</div>
-                    <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Tu competencia ya lanzó 50</h3>
-                    <p class="text-body text-sm">
-                        Mientras tú sigues varado buscando un vector en Pinterest,
-                        la tienda de al lado acaba de publicar 50 modelos nuevos y
-                        se está llevando a tus clientes. <strong style="color:#ddd">El mercado no espera.</strong>
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- PUENTE NARRATIVO -->
-            <div class="story-block max-w-3xl mx-auto" data-aos="fade-up">
-                Hay sublimadores que llevan meses en ese loop: buscar → fracasar → gastar → buscar de nuevo.
-                <strong>No es falta de esfuerzo. Es que el sistema está diseñado para que sigas pagando por cada diseño.</strong>
-                Lo que viene a continuación rompe ese loop de una vez.
-            </div>
-
         </div>
     </section>
 
-    <!-- ▌ SECCIÓN 3 — LA SOLUCIÓN + CARRUSEL -->
-    <section class="section">
-        <div class="max-w-5xl px-4">
-
-            <div class="text-center mb-12" data-aos="zoom-in">
-                <span class="pill mb-4" style="display:inline-flex;">
-                    <span class="dot"></span>
-                    El Atajo Definitivo
-                </span>
-                <br><br>
-                <h2 class="font-display text-h2 text-white mb-4">
-                    El Arsenal Anime<br>
-                    <span class="text-orange">+45,000 Diseños</span><br>
-                    Para Sublimadores
-                </h2>
-                <p class="text-body" style="max-width:36rem; margin:0 auto;">
-                    Más de 45,000 diseños de anime en alta definición, curados y procesados.
-                    <strong style="color:#fff">Listos para planchar. Listos para vender. Hoy mismo.</strong>
+    <!-- PROBLEMA -->
+    <section class="section" style="background: var(--bg); padding-top: 80px;">
+        <div class="container">
+            <div class="pain-intro">
+                <span class="eyebrow">La realidad que nadie te dice</span>
+                <h2 class="section-title">¿Por qué tus esculturas no se ven como las que admiras online?</h2>
+                <p style="color: var(--ink-muted); max-width: 560px; margin: 0 auto; font-size: 0.97rem;">
+                    No es falta de talento. Es falta del método correcto. Estos son los obstáculos que están bloqueando tu progreso:
                 </p>
             </div>
-
-            <!-- CARRUSEL -->
-            <div data-aos="fade-up" style="max-width:44rem; margin:0 auto 1.5rem;">
-                <div class="relative overflow-hidden" style="border-radius:1rem; border:1px solid var(--border-light); background:var(--bg-card); aspect-ratio:1/1;">
-
-                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cae3d871a115.91492639_1.webp"
-                        class="c-slide" style="opacity:1;transform:translateX(0);z-index:10;" alt="Diseño anime 1" loading="eager" decoding="async">
-                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cae3d86be2a5.40682413_2.webp"
-                        class="c-slide" style="opacity:0;transform:translateX(100%);z-index:1;" alt="Diseño anime 2" loading="lazy" decoding="async">
-                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cae3d8715952.36039764_3.webp"
-                        class="c-slide" style="opacity:0;transform:translateX(100%);z-index:1;" alt="Diseño anime 3" loading="lazy" decoding="async">
-                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cae3d8696551.26482116_4.webp"
-                        class="c-slide" style="opacity:0;transform:translateX(100%);z-index:1;" alt="Diseño anime 4" loading="lazy" decoding="async">
-                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cae3d86d4114.34730501_5.webp"
-                        class="c-slide" style="opacity:0;transform:translateX(100%);z-index:1;" alt="Diseño anime 5" loading="lazy" decoding="async">
-
-                    <button class="carousel-btn carousel-btn-left" onclick="moveCarousel(-1)" aria-label="Anterior">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
-                    </button>
-                    <button class="carousel-btn carousel-btn-right" onclick="moveCarousel(1)" aria-label="Siguiente">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-                    </button>
-
-                    <!-- BADGE HD -->
-                    <div style="position:absolute;bottom:0.875rem;left:50%;transform:translateX(-50%);z-index:30;padding:0.35rem 1rem;background:rgba(0,0,0,0.85);border:1px solid var(--border-light);border-radius:999px;font-size:0.72rem;font-weight:700;color:#fff;white-space:nowrap;display:flex;align-items:center;gap:0.4rem;">
-                        <span class="live-dot"></span> Ultra HD PNG — Fondo Transparente
-                    </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">📐</span>
+                    <div class="pain-title">Proporciones que no convencen</div>
+                    <div class="pain-desc">Pasas horas modelando y al final la postura se ve rígida o las extremidades no encajan. Sin bases anatómicas sólidas, cada hora de trabajo termina en frustración.</div>
                 </div>
-                <p class="text-center text-dim text-xs mt-3 italic">Ejemplos reales del pack. Lo que ves es lo que recibes.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ▌ SECCIÓN 4 — ECOSISTEMA / VIDEO BAKI -->
-    <section class="section section-dark">
-        <div class="max-w-5xl px-4">
-            <div class="grid-2 gap-8">
-
-                <!-- VIDEO LATERAL -->
-                <div data-aos="fade-right">
-                    <div class="video-wrap" style="aspect-ratio:4/5;">
-                        <div style="position:absolute;top:0.875rem;left:0.875rem;z-index:20;padding:0.3rem 0.875rem;background:rgba(0,0,0,0.85);border:1px solid var(--border-light);border-radius:999px;font-size:0.7rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:0.5rem;">
-                            <span class="live-dot"></span> Detalle 100% Real
-                        </div>
-                        <video loop muted playsinline preload="none"
-                            poster="https://res.cloudinary.com/daijidw3t/video/upload/v1777496850/Baki_2mod_abhuia.jpg"
-                            class="lazy-video"
-                            style="width:100%;height:100%;object-fit:cover;display:block;">
-                            <source src="https://res.cloudinary.com/daijidw3t/video/upload/f_auto,q_auto/v1777496850/Baki_2mod_abhuia">
-                        </video>
-                    </div>
+                <div class="pain-card">
+                    <span class="pain-icon">💸</span>
+                    <div class="pain-title">El mito de los materiales caros</div>
+                    <div class="pain-desc">Crees que necesitas arcillas premium e importadas para empezar. El miedo a gastar mal tu dinero te paraliza antes de dar el primer paso.</div>
                 </div>
-
-                <!-- COPY DERECHO -->
-                <div data-aos="fade-left">
-                    <span class="pill mb-6" style="display:inline-flex;">Para Tu Impresora</span>
-                    <h2 class="font-display text-h3 text-white mb-4" style="margin-top:1rem;">
-                        Descarga.<br>
-                        Imprime.<br>
-                        <span class="text-orange">Cobra.</span>
-                    </h2>
-                    <p class="text-body mb-6">
-                        El mayor dolor de cabeza del sublimador es encontrar diseños que no salgan
-                        pixelados al pasar por la plancha térmica o el DTF.
-                        Con +45,000 imágenes HD listas, ese problema termina hoy.
-                    </p>
-                    <p class="text-body mb-8">
-                        Simplemente descargas a tu PC, mandas a imprimir, planchas sobre el producto, empacas y
-                        <strong style="color:var(--orange); text-transform:uppercase; font-weight:900; letter-spacing:0.06em;">empiezas a facturar.</strong>
-                    </p>
-
-                    <!-- CHECKMARKS -->
-                    <div class="space-y-4">
-                        <div class="check-item">
-                            <div class="check-icon">✓</div>
-                            <div>
-                                <p class="font-bold text-white" style="font-size:0.95rem; margin-bottom:0.2rem;">Colores que estallan en la prenda</p>
-                                <p class="text-body text-sm">Garantía de máxima transferencia de tinta en sublimación.</p>
-                            </div>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-icon">✓</div>
-                            <div>
-                                <p class="font-bold text-white" style="font-size:0.95rem; margin-bottom:0.2rem;">Cero bordes blancos — PNG puro</p>
-                                <p class="text-body text-sm">Fondo transparente perfecto. Ningún parche blanco al planchar.</p>
-                            </div>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-icon">✓</div>
-                            <div>
-                                <p class="font-bold text-white" style="font-size:0.95rem; margin-bottom:0.2rem;">Compatible con todo tu equipo</p>
-                                <p class="text-body text-sm">Illustrator, Photoshop, Corel, Silhouette — funciona con todo.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🏚️</span>
+                    <div class="pain-title">Acabado "amateur" que lo arruina todo</div>
+                    <div class="pain-desc">Logras una base increíble, pero los detalles finales y las texturas te traicionan. Tu pieza no queda lista para una exposición o para vender — sino como un experimento inconcluso.</div>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ▌ SECCIÓN 5 — CARACTERÍSTICAS -->
-    <section class="section">
-        <div class="max-w-3xl px-4">
-
-            <div class="text-center mb-10" data-aos="fade-up">
-                <p class="font-bold text-white" style="font-size:1.15rem; margin-bottom:0.4rem;">
-                    La colección definitiva para impresión a pedido.
-                </p>
-                <p class="text-muted text-sm">Camisetas · Tazas · Sudaderas · Mochilas · Fundas · Termos · Mousepads</p>
-                <div class="orange-bar"></div>
-            </div>
-
-            <div class="space-y-4">
-                <div class="feature-row" data-aos="fade-up" data-aos-delay="40">
-                    <span class="feature-emoji">🎨</span>
-                    <div>
-                        <p class="font-bold text-white mb-1">Compatible con sublimación, DTF, vinilo, serigrafía y más</p>
-                        <p class="text-body text-sm">Funciona con CUALQUIER técnica de impresión, sin importar tu equipo.</p>
-                    </div>
-                </div>
-                <div class="feature-row" data-aos="fade-up" data-aos-delay="80">
-                    <span class="feature-emoji">💎</span>
-                    <div>
-                        <p class="font-bold text-white mb-1">Alta resolución real — sin píxeles, sin bordes cortados</p>
-                        <p class="text-body text-sm">Cada imagen preparada para impresión profesional. Calidad que se nota en la prenda.</p>
-                    </div>
-                </div>
-                <div class="feature-row" data-aos="fade-up" data-aos-delay="120">
-                    <span class="feature-emoji">⚡</span>
-                    <div>
-                        <p class="font-bold text-white mb-1">Listo para usar hoy — sin editar, sin perder tiempo</p>
-                        <p class="text-body text-sm">+45,000 archivos con fondo transparente. Descarga y empieza a vender.</p>
-                    </div>
-                </div>
-                <div class="feature-row" data-aos="fade-up" data-aos-delay="160">
-                    <span class="feature-emoji">🕐</span>
-                    <div>
-                        <p class="font-bold text-white mb-1">Ahorra 500+ horas de trabajo con +45,000 personajes organizados</p>
-                        <p class="text-body text-sm">Todo clasificado por serie y personaje. Directo al grano, sin buscar.</p>
-                    </div>
-                </div>
-                <div class="feature-row" data-aos="fade-up" data-aos-delay="200">
-                    <span class="feature-emoji">🛠️</span>
-                    <div>
-                        <p class="font-bold text-white mb-1">Formatos múltiples incluidos — PNG, PSD, AI y más</p>
-                        <p class="text-body text-sm">Máxima flexibilidad para personalizar cada diseño a tu gusto.</p>
-                    </div>
-                </div>
-                <div class="feature-row" data-aos="fade-up" data-aos-delay="240">
-                    <span class="feature-emoji">📜</span>
-                    <div>
-                        <p class="font-bold text-white mb-1">Licencia Comercial incluida — totalmente legal</p>
-                        <p class="text-body text-sm">Vende en Etsy, Shopify, Amazon Merch o físicamente sin preocupaciones.</p>
-                    </div>
+                <div class="pain-card">
+                    <span class="pain-icon">📚</span>
+                    <div class="pain-title">Mucha teoría, cero práctica</div>
+                    <div class="pain-desc">Cursos caros que te llenan de conceptos abstractos. Cuando te sientas frente a la mesa de trabajo, sigues sin saber por dónde empezar la estructura de tu figura.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ▌ SECCIÓN 6 — PRUEBA SOCIAL + STATS -->
-    <section class="section section-dark">
-        <div class="max-w-5xl px-4">
+    <!-- VIDEO PROCESO -->
+    <section class="section" style="background: var(--cream); padding: 80px 20px; text-align: center;">
+        <div class="container-sm">
+            <span class="eyebrow">Así se ve el proceso</span>
+            <h2 class="section-title mb-0">Fácil. Concreto. <em>Completamente posible.</em></h2>
+            <p style="color: var(--ink-muted); margin: 16px 0 40px; font-size: 0.95rem;">Esto es lo que aprenderás a crear desde cero, con tus propias manos.</p>
+            <div class="process-video-wrap">
+                <video autoplay loop muted playsinline>
+                    <source src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b83f1326b1.74583965_minivideo2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p class="process-caption">Porcelana fría · Materiales accesibles · Técnica profesional</p>
+        </div>
+    </section>
 
-            <!-- STATS — HARDCODED (no animados desde cero) -->
-            <div class="stats-grid mb-16" data-aos="fade-up">
-                <div>
-                    <div class="stat-num">45k+</div>
-                    <div class="stat-label">Archivos HD</div>
+    <!-- QUÉ APRENDERÁS -->
+    <section class="section" style="background: var(--bg);">
+        <div class="container">
+            <span class="eyebrow">Contenido del curso</span>
+            <h2 class="section-title">Lo que dominarás <em>paso a paso</em></h2>
+            <p style="color: var(--ink-muted); max-width: 560px; font-size: 0.95rem;">Sin módulos de relleno. Sin teoría vacía. Solo el paso a paso exacto para ver resultados desde el primer día.</p>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-num">01</div>
+                    <div class="module-title">Fundamentos de la porcelana fría</div>
+                    <div class="module-desc">Qué materiales necesitas realmente, dónde conseguirlos baratos y cómo preparar tu espacio de trabajo desde cero.</div>
                 </div>
-                <div>
-                    <div class="stat-num">1,850+</div>
-                    <div class="stat-label">Sublimadores</div>
+                <div class="module-card">
+                    <div class="module-num">02</div>
+                    <div class="module-title">Construcción de armazones sólidos</div>
+                    <div class="module-desc">Aprende a crear estructuras internas que nunca colapsarán y que soportarán cualquier pose o posición que diseñes.</div>
                 </div>
-                <div>
-                    <div class="stat-num">4.9/5</div>
-                    <div class="stat-label">Calificación</div>
+                <div class="module-card">
+                    <div class="module-num">03</div>
+                    <div class="module-title">Dominio del volumen y la anatomía</div>
+                    <div class="module-desc">Entiende cómo se comportan las masas en el espacio tridimensional para lograr proporciones creíbles y expresivas.</div>
                 </div>
-                <div>
-                    <div class="stat-num">30 GB</div>
-                    <div class="stat-label">De Contenido</div>
+                <div class="module-card">
+                    <div class="module-num">04</div>
+                    <div class="module-title">Criaturas, fantasía y realismo</div>
+                    <div class="module-desc">Diseña personajes únicos: desde criaturas monstruosas hasta figuras fantásticas con rasgos realistas y detallados.</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-num">05</div>
+                    <div class="module-title">Texturas y acabados profesionales</div>
+                    <div class="module-desc">Las técnicas exactas para lograr texturas que impactan: piel, escamas, telas, cabello y superficies orgánicas.</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-num">06</div>
+                    <div class="module-title">Pintura y terminado final</div>
+                    <div class="module-desc">El proceso de pintura y sellado que transforma una escultura buena en una pieza lista para exposición o venta.</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- TESTIMONIOS -->
-            <h2 class="font-display text-h3 text-white text-center mb-10" data-aos="fade-up">
-                Lo que dicen los que<br>ya están <span class="text-orange">facturando</span>
-            </h2>
+    <!-- GALERÍA DE RESULTADOS -->
+    <section class="section" style="background: var(--cream);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="eyebrow">Resultados reales del curso</span>
+                <h2 class="section-title">Esto crean nuestros <em>estudiantes</em></h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b7470df6c1.61929321_Creaturas-monstruosa.jpg" alt="Criatura monstruosa — resultado del curso">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b729b09246.67825102_Hombre-cuervo.jpg" alt="Hombre cuervo — resultado del curso">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b717cbc056.12125670_Sirena.jpg" alt="Sirena — resultado del curso">
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: var(--ink-muted); font-style: italic; font-size: 0.85rem;">Obras realizadas por estudiantes del curso con materiales accesibles</p>
+        </div>
+    </section>
 
-            <div class="grid-3" data-aos="fade-up">
-
-                <!-- T1 -->
-                <div class="testi-card">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="text-sm leading-relaxed mb-4" style="color:#c0c0c0;">
-                        "Abrí mi tienda en Etsy y en la primera semana ya había vendido 12 camisetas.
-                        Los recortes son perfectos — cero tiempo en Photoshop. Jamás esperé recuperar lo invertido tan rápido."
+    <!-- INSTRUCTOR -->
+    <section class="section dark">
+        <div class="container">
+            <div class="instructor-block">
+                <div class="instructor-img-wrap">
+                    <!-- REEMPLAZA CON FOTO REAL DEL INSTRUCTOR -->
+                    <div class="instructor-placeholder">
+                        📸 Agrega aquí la foto del instructor<br><br>
+                        Recomendamos una imagen vertical (4:5) mostrando al instructor trabajando con sus esculturas.
+                    </div>
+                </div>
+                <div class="instructor-text">
+                    <span class="eyebrow">Tu instructor</span>
+                    <!-- REEMPLAZA [NOMBRE DEL INSTRUCTOR] CON EL NOMBRE REAL -->
+                    <div class="instructor-name">[Nombre del Instructor]</div>
+                    <div class="instructor-role">Escultor profesional · Artista independiente</div>
+                    <p class="instructor-bio">
+                        <!-- REEMPLAZA ESTA BIO CON LA HISTORIA REAL DEL INSTRUCTOR -->
+                        Lleva más de [X] años creando figuras en porcelana fría que han sido exhibidas en [menciona exposiciones, clientes o logros reales]. 
+                        Ha enseñado la técnica a más de [número] artistas en toda Latinoamérica y tiene una obsesión particular: desmitificar que la escultura profesional requiere materiales caros o años de escuela formal.
+                        <br><br>
+                        Su método combina la técnica artesanal tradicional con principios de diseño de personajes que le permiten crear criaturas con un nivel de detalle que sorprende a coleccionistas y galeristas por igual.
                     </p>
-                    <div class="flex gap-3">
-                        <div class="testi-avatar" style="background:linear-gradient(135deg,#FF5500,#FF8C00);">C</div>
+                    <div class="instructor-stats">
                         <div>
-                            <p class="font-bold text-white text-sm">Carolina M.</p>
-                            <p class="text-xs text-dim">Tienda Etsy · Medellín, Colombia</p>
+                            <div class="stat-num">+[N]</div>
+                            <div class="stat-label">Estudiantes formados</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- T2 -->
-                <div class="testi-card">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="text-sm leading-relaxed mb-4" style="color:#c0c0c0;">
-                        "Soy diseñadora freelance y este pack me dio recursos para meses de proyectos.
-                        Mis clientes quedan impresionados con la calidad del resultado en tela.
-                        Se nota que los diseños fueron hechos pensando en sublimación."
-                    </p>
-                    <div class="flex gap-3">
-                        <div class="testi-avatar" style="background:linear-gradient(135deg,#2563EB,#06B6D4);">V</div>
                         <div>
-                            <p class="font-bold text-white text-sm">Valentina R.</p>
-                            <p class="text-xs text-dim">Diseñadora Freelance · Bogotá</p>
+                            <div class="stat-num">[X] años</div>
+                            <div class="stat-label">De experiencia</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- T3 -->
-                <div class="testi-card">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="text-sm leading-relaxed mb-4" style="color:#c0c0c0;">
-                        "45,000 imágenes por ese precio es una locura absoluta.
-                        Literalmente recuperé lo invertido con la primera taza de anime que vendí.
-                        Llevo 3 semanas y ya tengo un catálogo de 200 productos."
-                    </p>
-                    <div class="flex gap-3">
-                        <div class="testi-avatar" style="background:linear-gradient(135deg,#D97706,#DC2626);">A</div>
                         <div>
-                            <p class="font-bold text-white text-sm">Andrés P.</p>
-                            <p class="text-xs text-dim">E-Commerce · Ciudad de México</p>
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">Online y a tu ritmo</div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
-    <!-- ▌ SECCIÓN 7 — VALUE STACK + OFERTA PRINCIPAL -->
-    <section class="section">
-        <div class="max-w-3xl px-4">
-            <div class="offer-box" data-aos="zoom-in">
-
-                <div class="offer-ribbon">
-                    🔥 Oferta Especial — Precio de Lanzamiento
+    <!-- TESTIMONIOS -->
+    <section class="section" style="background: var(--bg);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 8px;">
+                <span class="eyebrow">Lo que dicen quienes ya tomaron el curso</span>
+                <h2 class="section-title">Resultados <em>reales</em> de estudiantes reales</h2>
+            </div>
+            <p style="text-align: center; color: var(--ink-muted); font-size: 0.85rem; margin-bottom: 0;">
+                💡 <em>Recomendamos reemplazar estos testimonios con capturas de pantalla reales de WhatsApp, Instagram o correos de tus estudiantes. Tienen 3–5x más credibilidad en tráfico frío.</em>
+            </p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Nunca había tocado la porcelana fría en mi vida y pensaba que los materiales me costarían una fortuna. Ver el proceso en video paso a paso me dio la confianza para empezar. Hoy terminé mi primera criatura gastando poquísimo dinero.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Carlos M.</span>
+                        <span class="testimonial-tag">✔ Estudiante verificado</span>
+                    </div>
                 </div>
-
-                <div class="text-center" style="margin-top:2rem;">
-                    <h2 class="font-display text-h3 text-white mb-8">Lo que te llevas hoy:</h2>
-
-                    <ul class="value-list">
-                        <li><span class="tick">✓</span> +45,000 PNGs y vectores de anime en Ultra HD</li>
-                        <li><span class="tick">✓</span> Fondo transparente en cada archivo (cero edición)</li>
-                        <li><span class="tick">✓</span> Licencia Comercial — totalmente legal para vender</li>
-                        <li><span class="tick">✓</span> Acceso inmediato en Google Drive (link en 60 segundos)</li>
-                        <li><span class="tick">✓</span> 30 GB de contenido — tuyo de por vida, sin límite</li>
-                        <li><span class="tick">✓</span> Actualizaciones futuras gratis</li>
-                    </ul>
-
-                    <!-- POR QUÉ TAN BARATO — SECCIÓN NUEVA CRÍTICA -->
-                    <div class="why-cheap mb-8">
-                        <div class="cheap-label">¿Por qué $4.95?</div>
-                        <p class="text-sm leading-relaxed" style="color:#b0b0b0; text-align:left;">
-                            Somos sublimadores, no intermediarios. Construimos este arsenal nosotros mismos,
-                            sin pagar diseñadores por cada imagen. Lo distribuimos digitalmente a escala.
-                            <strong style="color:#fff;">El costo de dártelo a ti es cero — por eso el precio es ridículo.</strong>
-                            No hay trampa. No hay suscripción oculta. Un solo pago, acceso de por vida.
-                        </p>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Llevaba meses frustrada porque mis esculturas siempre colapsaban o quedaban desproporcionadas. El módulo de anatomía me cambió todo. Ahora mis personajes se sostienen solos y tienen un nivel de detalle que parece de exposición.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Laura Gómez</span>
+                        <span class="testimonial-tag">✔ Artista independiente</span>
                     </div>
-
-                    <!-- PRECIO -->
-                    <div class="mb-2">
-                        <p class="text-dim uppercase tracking-wide text-xs mb-1">Valor real de mercado: <span class="strike">$78.00 USD</span></p>
-                        <div class="price-tag"><span class="price-dollar">$</span>4.95</div>
-                        <p class="text-orange-c font-bold mt-2 uppercase tracking-wide text-sm">Dólares Americanos · Pago Único · Sin Suscripción</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <p class="testimonial-text">Las explicaciones superaron mis expectativas y el precio es bajísimo para todo lo que enseña. Le doy 4 estrellas porque me encantaría un módulo extra de moldes para reproducir piezas. Aún así, lo recomiendo sin dudarlo — es una herramienta indispensable.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">David T.</span>
+                        <span class="testimonial-tag">✔ Artista plástico</span>
                     </div>
-
-                    <div class="mb-6">
-                        <p class="text-sm text-muted">Esta oferta desaparece cuando el contador llegue a cero:</p>
-                        <div class="countdown-timer final-timer mt-2 mb-4">14:40</div>
-                    </div>
-
-                    <!-- CTA ÚNICO -->
-                    <a href="https://pay.hotmart.com/S104454776B?off=abs4xoxb&checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn-cta">
-                        Quiero Mis 45,000 Diseños — $4.95
-                    </a>
-
-                    <div class="security-row">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-                        Pago 100% Seguro por Hotmart · Acceso en menos de 1 minuto
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ▌ SECCIÓN 8 — FAQ (con objeción silenciosa añadida) -->
-    <section class="section section-dark">
-        <div class="max-w-3xl px-4">
+    <!-- OFERTA -->
+    <section class="offer-section">
+        <div class="offer-box">
+            <span class="offer-tag">Oferta de lanzamiento</span>
+            <h2 class="offer-title">Todo lo que necesitas para crear <em>tu primera criatura de colección</em></h2>
 
-            <h2 class="font-display text-h3 text-white text-center mb-12" data-aos="fade-up">
-                Dudas frecuentes
-            </h2>
-
-            <div class="faq-wrap" data-aos="fade-up">
-
-                <!-- FAQ 0 — OBJECIÓN SILENCIOSA (nueva, crítica) -->
-                <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        ¿Son diseños únicos o los encuentro gratis en internet?
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        Los diseños del arsenal son imágenes procesadas específicamente para sublimación e impresión:
-                        fondos removidos, resolución elevada a estándar de estudio, colores calibrados para transferencia de tinta.
-                        Puedes encontrar personajes de anime en Google, claro. Lo que <strong style="color:#fff;">no vas a encontrar gratis</strong>
-                        es una colección curada de +45,000 imágenes con fondo transparente perfecto, listas para planchar sin tocarlas.
-                        Eso es exactamente lo que vale el tiempo que te ahorra.
-                    </div>
+            <div class="offer-includes">
+                <div class="offer-includes-title">Incluye:</div>
+                <div class="offer-item">
+                    <div class="offer-check">✓</div>
+                    <div class="offer-item-text"><strong>Curso completo en video</strong> — 6 módulos, acceso inmediato</div>
                 </div>
-
-                <!-- FAQ 1 -->
-                <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        ¿Puedo usar estas imágenes para VENDER productos físicos?
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        Sí, 100%. Tu compra incluye Licencia de Uso Comercial. Puedes usarlas en camisetas, tazas,
-                        posters, fundas o cualquier producto que vendas en Shopify, Etsy, Amazon Merch o físicamente.
-                    </div>
+                <div class="offer-item">
+                    <div class="offer-check">✓</div>
+                    <div class="offer-item-text"><strong>Acceso de por vida</strong> — sin fechas de vencimiento, repasa cuantas veces quieras</div>
                 </div>
-
-                <!-- FAQ 2 -->
-                <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        ¿Funcionan para tazas, mousepads o solo ropa?
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        Totalmente versátiles. Al ser Ultra HD, puedes redimensionarlos para imprimir en tazas,
-                        gorras, cases de celular, pósters, mousepads, tapetes, o prendas grandes como sudaderas
-                        sin perder ni un píxel de nitidez.
-                    </div>
+                <div class="offer-item">
+                    <div class="offer-check">✓</div>
+                    <div class="offer-item-text"><strong>Disponible en cualquier dispositivo</strong> — celular, tablet o computador</div>
                 </div>
-
-                <!-- FAQ 3 -->
-                <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        ¿Tienen marcas de agua o fondo blanco?
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        Cero marcas de agua. Fondo transparente puro en PNG. Los montas sobre cualquier color de tela
-                        o producto y no hay parche blanco, ni borde raro. Listos para usar directo.
-                    </div>
+                <div class="offer-item">
+                    <div class="offer-check">✓</div>
+                    <div class="offer-item-text"><strong>Lista de materiales con precios reales</strong> — lo que realmente necesitas y dónde conseguirlo barato</div>
                 </div>
-
-                <!-- FAQ 4 -->
-                <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        ¿Se borran o tengo un tiempo límite para descargarlos?
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        No se borran nunca. Tu acceso al Drive es de por vida. No necesitas descargar los 30 GB de golpe:
-                        puedes entrar cada vez que tengas un pedido y bajar solo el diseño que necesitas ese día.
-                    </div>
+                <div class="offer-item">
+                    <div class="offer-check">✓</div>
+                    <div class="offer-item-text"><strong>Garantía incondicional de 7 días</strong> — si no te convence, Hotmart te devuelve el dinero sin preguntas</div>
                 </div>
-
-                <!-- FAQ 5 -->
-                <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        ¿Tengo que instalar algún programa o pagar mensual?
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        No. Es un pago único, sin suscripciones. Accedes desde cualquier navegador mediante un link
-                        de Google Drive que te llega por correo en cuanto Hotmart confirma el pago — normalmente en 30 segundos.
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
 
-    <!-- ▌ SECCIÓN 9 — URGENCIA FINAL -->
-    <section class="final-urgency">
-        <div class="final-urgency-inner px-4">
-            <h2 class="font-display text-h2 text-white mb-4" data-aos="fade-up">
-                El precio sube<br>cuando el tiempo<br><span class="text-orange">se acabe.</span>
-            </h2>
-            <p class="text-muted mb-6 text-sm" data-aos="fade-up">Tiempo restante para este precio:</p>
-            <div class="countdown-timer final-timer mb-8" data-aos="zoom-in">14:40</div>
-            <div style="max-width:26rem; margin:0 auto;" data-aos="fade-up">
-                <a href="https://pay.hotmart.com/S104454776B?off=abs4xoxb&checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn-cta">
-                    Conseguir Todo Por $4.95
-                </a>
-                <div class="security-row mt-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-                    Pago seguro por Hotmart · Acceso en menos de 1 minuto
+            <div class="divider"></div>
+
+            <div class="price-wrap">
+                <div class="price-old">Precio regular: $78.00 USD</div>
+                <div class="price-label">Hoy pagas solo</div>
+                <div class="price-new"><span class="price-currency">$</span>6.99 <span style="font-size: 1.4rem;">USD</span></div>
+            </div>
+
+            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
+                Quiero empezar a crear ahora →
+            </a>
+            <p class="cta-sub">Pago único · Acceso inmediato · <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" target="_blank">Respaldado por Hotmart</a></p>
+
+            <div class="guarantee-block">
+                <div class="guarantee-icon">🛡️</div>
+                <div>
+                    <div class="guarantee-title">Garantía de 7 días — sin preguntas</div>
+                    <p class="guarantee-text">Si en los primeros 7 días no estás satisfecho con el curso por cualquier razón, Hotmart te devuelve el 100% de tu dinero de forma automática. Cero riesgo de tu parte.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ▌ FOOTER -->
+    <!-- FAQ -->
+    <section class="section" style="background: var(--bg);">
+        <div class="container-sm">
+            <div class="text-center" style="margin-bottom: 0;">
+                <span class="eyebrow">Preguntas frecuentes</span>
+                <h2 class="section-title">Resolvemos tus <em>dudas</em></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">¿Es para principiantes absolutos?</div>
+                    <div class="faq-a">Sí, está diseñado exactamente para eso. Partimos desde cero — qué materiales comprar, cómo preparar tu espacio y cómo dar el primer paso — hasta llegar a un nivel de detalle y acabado de exposición. No necesitas ninguna experiencia previa.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">¿Cuánto tiempo necesito por día?</div>
+                    <div class="faq-a">El curso está diseñado para ir a tu propio ritmo. Puedes avanzar 30 minutos al día o maratonear un módulo completo el fin de semana. El acceso es de por vida, así que no hay prisa.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">¿Los materiales son caros o difíciles de conseguir?</div>
+                    <div class="faq-a">No. Uno de los pilares del método es usar materiales accesibles que puedes conseguir en cualquier ferretería, tienda de manualidades o incluso en internet. El curso incluye una lista detallada con alternativas económicas para cada material.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">¿Puedo vender lo que cree con este curso?</div>
+                    <div class="faq-a">Absolutamente. Las técnicas que aprenderás te permiten crear piezas de nivel exposición y colección. Muchos estudiantes han comenzado a vender sus obras en ferias de arte, mercados artesanales y plataformas como Etsy o Instagram.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">¿Hay garantía si no me gusta?</div>
+                    <div class="faq-a">Sí. Tienes 7 días de garantía incondicional directamente respaldada por Hotmart. Si por cualquier razón no estás satisfecho, solicitas el reembolso y te devuelven el 100% de tu dinero sin preguntas ni trámites complicados.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">¿En qué dispositivos puedo ver el curso?</div>
+                    <div class="faq-a">En cualquiera. El curso está en la plataforma de Hotmart, que funciona en celular, tablet y computador. Puedes ver los videos con conexión a internet o descargarlos para verlos sin conexión desde la app de Hotmart.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="offer-section" style="padding: 80px 20px;">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <span class="eyebrow" style="color: var(--gold-lt);">Estás a un paso</span>
+            <h2 class="offer-title" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem);">Tu primera criatura de colección <em>te está esperando.</em></h2>
+            <p style="color: #a89880; margin-bottom: 36px; font-size: 0.95rem;">Únete hoy por $6.99 USD y empieza a crear desde el primer día.</p>
+            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
+                Quiero empezar a crear ahora →
+            </a>
+            <p class="cta-sub">Pago único · Acceso inmediato · Garantía de 7 días</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 El Arsenal Anime (+45,000 Diseños) — Todos los derechos reservados.</p>
-        <p style="margin-top:0.5rem; max-width:36rem; margin-left:auto; margin-right:auto;">
-            This site is not a part of the Facebook website or Facebook Inc.
-            This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
-        </p>
+        <div class="footer-logo">Criatura.</div>
+        <p>&copy; 2026 Criatura — Escultura Profesional. Todos los derechos reservados.</p>
+        <div style="margin-top: 12px;">
+            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" target="_blank">Términos y condiciones</a>
+        </div>
     </footer>
 
-    <!-- =============================================
-         SCRIPTS
-    ============================================= -->
-
-    <!-- CARRUSEL -->
     <script>
-        let slideIndex = 0;
-        let slideInterval;
-        const cSlides = document.querySelectorAll('.c-slide');
-
-        function showSlide(index) {
-            cSlides.forEach((s, i) => {
-                s.style.opacity  = i === index ? '1' : '0';
-                s.style.transform = i === index ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-                s.style.zIndex   = i === index ? '10' : '1';
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
             });
-        }
+        });
 
-        function moveCarousel(dir) {
-            clearInterval(slideInterval);
-            slideIndex = (slideIndex + dir + cSlides.length) % cSlides.length;
-            showSlide(slideIndex);
-            startAutoCarousel();
-        }
-
-        function startAutoCarousel() {
-            slideInterval = setInterval(() => {
-                slideIndex = (slideIndex + 1) % cSlides.length;
-                showSlide(slideIndex);
-            }, 3000);
-        }
-
-        if (cSlides.length > 0) startAutoCarousel();
-    </script>
-
-    <!-- HOTMART SRC PARAM -->
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const srcParam = urlParams.get('src');
-        if (srcParam) {
-            document.querySelectorAll('a[href^="https://pay.hotmart.com"]').forEach(link => {
-                const sep = link.href.includes('?') ? '&' : '?';
-                link.href = link.href + sep + 'src=' + encodeURIComponent(srcParam);
-            });
-        }
-    </script>
-
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, offset: 60, duration: 750, easing: 'ease-out' });
-    </script>
-
-    <!-- COUNTDOWN — SESSIONSSTORAGE para que sea consistente en la sesión pero no al recargar desde cero -->
-    <script>
-        function startCountdown() {
-            const timerEls = document.querySelectorAll('.countdown-timer');
-            if (!timerEls.length) return;
-
-            // Usar sessionStorage: persiste mientras no se cierra la pestaña
-            // pero se resetea si el usuario cierra y vuelve a abrir
-            const KEY = 'ars_timer_end';
-            const DURATION = (14 * 60 + 40) * 1000;
-
-            let endTime = parseInt(sessionStorage.getItem(KEY), 10);
-            if (!endTime || endTime < Date.now()) {
-                endTime = Date.now() + DURATION;
-                sessionStorage.setItem(KEY, endTime);
-            }
-
-            function update() {
-                const remaining = Math.max(0, endTime - Date.now());
-                const m = Math.floor(remaining / 60000);
-                const s = Math.floor((remaining % 60000) / 1000);
-                const txt = m + ':' + (s < 10 ? '0' : '') + s;
-                timerEls.forEach(el => el.textContent = txt);
-                if (remaining > 0) requestAnimationFrame(update);
-                else timerEls.forEach(el => el.textContent = '0:00');
-            }
-
-            requestAnimationFrame(update);
-        }
-
-        document.addEventListener('DOMContentLoaded', startCountdown);
-    </script>
-
-    <!-- FAQ TOGGLE -->
-    <script>
-        function toggleFaq(btn) {
-            const item = btn.parentElement;
-            const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
-        }
-    </script>
-
-    <!-- LAZY VIDEO -->
-    <script>
-        window.addEventListener('load', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const v = entry.target;
-                    if (entry.isIntersecting) { v.play(); }
-                    else { v.pause(); }
+        // Hotmart SRC param passthrough
+        document.addEventListener("DOMContentLoaded", function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var srcParam = urlParams.get('src');
+            if (srcParam) {
+                document.querySelectorAll("a[href*='hotmart.com']").forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    link.setAttribute('href', href + (href.indexOf('?') !== -1 ? '&' : '?') + 'src=' + encodeURIComponent(srcParam));
                 });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.lazy-video').forEach(v => observer.observe(v));
+            }
         });
     </script>
-
 </body>
 </html>
