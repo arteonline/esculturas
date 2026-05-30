@@ -134,6 +134,7 @@
             width: 100%; height: 100%;
             object-fit: cover;
             position: absolute; inset: 0;
+            transform: scale(1.02) translateY(1.0%);
         }
 
         .hero-proof {
@@ -747,7 +748,7 @@
 
             <div class="video-frame">
                 <video autoplay loop muted playsinline>
-                    <source src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7be8cdb07d0.65004765_Video_de_Escultura_Generado.mp4" type="video/mp4">
+                    <source src="https://res.cloudinary.com/daijidw3t/video/upload/v1780165405/Hero_Video_3_lcbpiu.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -877,10 +878,7 @@
         <div class="container">
             <div class="instructor-block">
                 <div class="instructor-img-wrap">
-                    <!-- REEMPLAZA CON FOTO REAL DEL INSTRUCTOR -->
-                    <div class="instructor-placeholder">
-                        📸 Foto del instructor aquí
-                    </div>
+                    <img src="https://res.cloudinary.com/daijidw3t/image/upload/v1780166589/Sebasti%C3%A1n-Mora_vguvo3.webp" alt="Sebastián Mora">
                 </div>
                 <div class="instructor-text">
                     <span class="eyebrow">Tu instructor</span>
@@ -989,10 +987,10 @@
                 <div class="price-new"><span class="price-currency">$</span>6.99 <span style="font-size: 1.4rem;">USD</span></div>
             </div>
 
-            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://pay.hotmart.com/P106063001C?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
                 Quiero crear mi primera criatura →
             </a>
-            <p class="cta-sub">Pago único de $6.99 · Acceso inmediato · <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" target="_blank">Garantía de 7 días por Hotmart</a></p>
+            <p class="cta-sub">Pago único de $6.99 · Acceso inmediato · <a href="https://pay.hotmart.com/P106063001C?checkoutMode=10" target="_blank">Garantía de 7 días por Hotmart</a></p>
 
             <div class="guarantee-block">
                 <div class="guarantee-icon">🛡️</div>
@@ -1046,7 +1044,7 @@
             <span class="eyebrow" style="color: var(--gold-lt);">La única pregunta es cuándo empiezas</span>
             <h2 class="offer-title" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem);">Hoy por $6.99. <em>La próxima criatura la haces tú.</em></h2>
             <p style="color: #a89880; margin-bottom: 36px; font-size: 0.95rem;">Acceso inmediato a los 6 módulos. Sin fecha de vencimiento. Sin excusas.</p>
-            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://pay.hotmart.com/P106063001C?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
                 Quiero crear mi primera criatura →
             </a>
             <p class="cta-sub">Pago único · Acceso inmediato · Garantía de 7 días</p>
@@ -1058,7 +1056,7 @@
         <div class="footer-logo">Criatura.</div>
         <p>&copy; 2026 Criatura — Escultura Profesional. Todos los derechos reservados.</p>
         <div style="margin-top: 12px;">
-            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" target="_blank">Términos y condiciones</a>
+            <a href="https://pay.hotmart.com/P106063001C?checkoutMode=10" target="_blank">Términos y condiciones</a>
         </div>
     </footer>
 
@@ -1073,14 +1071,34 @@
             });
         });
 
-        // Hotmart SRC param passthrough
+        // Hotmart parameters passthrough (SRC and fbclid) & Video Speed
         document.addEventListener("DOMContentLoaded", function() {
+            var heroVideo = document.querySelector(".video-frame video");
+            if (heroVideo) {
+                heroVideo.playbackRate = 2.0;
+            }
+
             var urlParams = new URLSearchParams(window.location.search);
             var srcParam = urlParams.get('src');
-            if (srcParam) {
+            var fbclidParam = urlParams.get('fbclid');
+            
+            if (srcParam || fbclidParam) {
                 document.querySelectorAll("a[href*='hotmart.com']").forEach(function(link) {
-                    var href = link.getAttribute('href');
-                    link.setAttribute('href', href + (href.indexOf('?') !== -1 ? '&' : '?') + 'src=' + encodeURIComponent(srcParam));
+                    try {
+                        var href = link.getAttribute('href');
+                        if (href) {
+                            var url = new URL(href, window.location.origin);
+                            if (srcParam) {
+                                url.searchParams.set('src', srcParam);
+                            }
+                            if (fbclidParam) {
+                                url.searchParams.set('fbclid', fbclidParam);
+                            }
+                            link.setAttribute('href', url.toString());
+                        }
+                    } catch (e) {
+                        console.error("Error setting URL params:", e);
+                    }
                 });
             }
         });
