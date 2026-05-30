@@ -695,8 +695,7 @@
         @media (max-width: 720px) {
             .instructor-block { grid-template-columns: 1fr; gap: 40px; }
             .instructor-img-wrap { aspect-ratio: 1/1; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-grid .gallery-item:last-child { display: none; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 24px; max-width: 480px; margin: 0 auto; }
             .offer-box { padding: 40px 24px; }
             .guarantee-block { flex-direction: column; gap: 16px; padding: 28px 24px; }
         }
@@ -853,7 +852,7 @@
 
     <!-- GALERÍA DE RESULTADOS -->
     <section class="section" style="background: var(--cream);">
-        <div class="container">
+        <div class="container" style="max-width: 1140px;">
             <div class="text-center" style="margin-bottom: 40px;">
                 <span class="eyebrow">Esto lo hicieron personas como tú</span>
                 <h2 class="section-title">Sin experiencia previa. <em>Con materiales de ferretería.</em></h2>
