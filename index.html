@@ -703,6 +703,56 @@
             .hero-proof { gap: 12px; flex-direction: column; align-items: flex-start; padding: 0 20px; }
             .instructor-stats { flex-direction: column; gap: 20px; }
         }
+
+        /* ── PURCHASE NOTIFICATION TOAST ── */
+        #purchase-notification {
+            position: fixed;
+            bottom: 24px;
+            left: -360px;
+            z-index: 1000;
+            background: var(--cream);
+            color: var(--ink);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--terracotta);
+            border-radius: 6px;
+            padding: 16px 20px;
+            max-width: 320px;
+            box-shadow: 0 12px 36px rgba(196,96,58,0.12);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #purchase-notification.show {
+            left: 24px;
+            opacity: 1;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(90, 122, 92, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(90, 122, 92, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(90, 122, 92, 0); }
+        }
+        .pulse-dot {
+            width: 8px; height: 8px;
+            background: var(--sage);
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: pulse-green 2s infinite;
+        }
+        @media (max-width: 720px) {
+            #purchase-notification {
+                left: -100% !important;
+                bottom: 16px !important;
+                max-width: calc(100% - 32px) !important;
+                width: 100% !important;
+            }
+            #purchase-notification.show {
+                left: 16px !important;
+                opacity: 1 !important;
+            }
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -808,38 +858,23 @@
     <section class="section" style="background: var(--bg);">
         <div class="container">
             <span class="eyebrow">Contenido del curso</span>
-            <h2 class="section-title">6 módulos. Del alambre a una pieza <em>lista para vender.</em></h2>
-            <p style="color: var(--ink-muted); max-width: 560px; font-size: 0.95rem;">Sin relleno. Sin teoría vacía. El paso a paso exacto para tener tu primera figura terminada — con el nivel de acabado que justifica el precio que quieres cobrar.</p>
+            <h2 class="section-title">El paso a paso. Del alambre a una pieza <em>lista para vender.</em></h2>
+            <p style="color: var(--ink-muted); max-width: 560px; font-size: 0.95rem;">Un método práctico estructurado en 3 partes con videos extensos y detallados. Sin relleno. Aprendes haciendo tu propia criatura paso a paso de principio a fin.</p>
             <div class="modules-grid">
                 <div class="module-card">
                     <div class="module-num">01</div>
-                    <div class="module-title">Fundamentos de la porcelana fría</div>
-                    <div class="module-desc">Qué materiales necesitas realmente, dónde conseguirlos baratos y cómo preparar tu espacio de trabajo desde cero.</div>
+                    <div class="module-title">Parte 1: Preparación y Estructura Sólida</div>
+                    <div class="module-desc">Comenzamos con la lista de materiales económicos de ferretería y la preparación del espacio. Luego construimos el esqueleto de alambre y aluminio que dará soporte irrompible y definirá la postura dinámica de tu criatura.</div>
                 </div>
                 <div class="module-card">
                     <div class="module-num">02</div>
-                    <div class="module-title">Construcción de armazones sólidos</div>
-                    <div class="module-desc">Aprende a crear estructuras internas que nunca colapsarán y que soportarán cualquier pose o posición que diseñes.</div>
+                    <div class="module-title">Parte 2: Anatomía, Volumen y Modelado</div>
+                    <div class="module-desc">Pasamos a la porcelana fría. Aprenderás a dominar la masa sin que se agriete, calcular los volúmenes en el espacio tridimensional and modelar los músculos y la anatomía general de tu personaje logrando proporciones perfectas.</div>
                 </div>
                 <div class="module-card">
                     <div class="module-num">03</div>
-                    <div class="module-title">Dominio del volumen y la anatomía</div>
-                    <div class="module-desc">Entiende cómo se comportan las masas en el espacio tridimensional para lograr proporciones creíbles y expresivas.</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">04</div>
-                    <div class="module-title">Criaturas, fantasía y realismo</div>
-                    <div class="module-desc">Diseña personajes únicos: desde criaturas monstruosas hasta figuras fantásticas con rasgos realistas y detallados.</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">05</div>
-                    <div class="module-title">Texturas y acabados profesionales</div>
-                    <div class="module-desc">Las técnicas exactas para lograr texturas que impactan: piel, escamas, telas, cabello y superficies orgánicas.</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">06</div>
-                    <div class="module-title">Pintura y terminado final</div>
-                    <div class="module-desc">El proceso de pintura y sellado que transforma una escultura buena en una pieza lista para fotografiar, publicar y vender.</div>
+                    <div class="module-title">Parte 3: Detalles, Pintura y Acabado Comercial</div>
+                    <div class="module-desc">El secreto está en los detalles. Esculpimos texturas hiperrealistas (piel, escamas, rasgos orgánicos) y finalizamos con las técnicas de pintura acrílica y sellado que transforman una figura común en una pieza coleccionable lista para su venta.</div>
                 </div>
             </div>
         </div>
@@ -864,6 +899,24 @@
                 </div>
             </div>
             <p style="text-align: center; margin-top: 20px; color: var(--ink-muted); font-style: italic; font-size: 0.85rem;">Obras reales de estudiantes. Primera o segunda escultura. Este tipo de pieza se vende entre $40 y $200 USD en ferias y plataformas digitales.</p>
+
+            <!-- BLOQUE DE ACCIÓN INTERMEDIO CON URGENCIA -->
+            <div style="max-width: 640px; margin: 48px auto 0; text-align: center; padding: 40px 32px; background: rgba(196,96,58,0.04); border: 1px solid rgba(196,96,58,0.2); border-radius: 8px;">
+                <span class="eyebrow" style="color: var(--terracotta); font-weight: 700; margin-bottom: 8px;">Oferta especial de lanzamiento</span>
+                <h3 style="font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 4vw, 1.8rem); color: var(--ink); margin-bottom: 12px; line-height: 1.35;">¿Por qué solo $6.99 USD por un método que vale 10 veces más?</h3>
+                <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 24px;">
+                    Sabemos que una sola figura de nivel comercial se vende por más de 10 veces el costo de este curso completo. El precio real de este método paso a paso es de <strong>$78.00 USD</strong>. Sin embargo, para premiar a quienes toman decisiones rápidas, mantendremos este precio simbólico por los próximos 15 minutos. Al agotarse el temporizador de tu sesión, la oferta caducará automáticamente.
+                </p>
+                <div style="font-size: 1.6rem; font-weight: 700; color: var(--terracotta); margin-bottom: 24px; font-family: monospace; letter-spacing: 2px;">
+                    Tiempo restante: <span id="timer">15:00</span>
+                </div>
+                <a href="https://pay.hotmart.com/P106063001C?checkoutMode=10" class="cta-btn" style="max-width: 440px; display: inline-block;">
+                    Quiero el método completo por $6.99 →
+                </a>
+                <p style="font-size: 0.78rem; color: var(--terracotta); font-weight: 600; margin-top: 16px; letter-spacing: 0.08em; text-transform: uppercase;">
+                    ⚠️ Atención: El precio subirá a $78.00 USD al expirar el tiempo
+                </p>
+            </div>
         </div>
     </section>
 
@@ -953,7 +1006,7 @@
                 <div class="offer-includes-title">Incluye:</div>
                 <div class="offer-item">
                     <div class="offer-check">✓</div>
-                    <div class="offer-item-text"><strong>Curso completo en video</strong> — 6 módulos, acceso inmediato</div>
+                    <div class="offer-item-text"><strong>Curso completo en video</strong> — Estructurado en 3 partes, acceso inmediato</div>
                 </div>
                 <div class="offer-item">
                     <div class="offer-check">✓</div>
@@ -1010,7 +1063,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-q">¿Cuánto tiempo necesito por día?</div>
-                    <div class="faq-a">El curso está diseñado para ir a tu propio ritmo. Puedes avanzar 30 minutos al día o maratonear un módulo completo el fin de semana. El acceso es de por vida, así que no hay prisa.</div>
+                    <div class="faq-a">El curso está diseñado para ir a tu propio ritmo. Puedes avanzar 30 minutos al día o completar una parte completa el fin de semana. El acceso es de por vida, así que no hay prisa.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-q">¿Los materiales son caros o difíciles de conseguir?</div>
@@ -1037,7 +1090,7 @@
         <div style="max-width: 600px; margin: 0 auto; text-align: center;">
             <span class="eyebrow" style="color: var(--gold-lt);">La única pregunta es cuándo empiezas</span>
             <h2 class="offer-title" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem);">$6.99 hoy. <em>Tu primera pieza vendida puede ser en semanas.</em></h2>
-            <p style="color: #a89880; margin-bottom: 36px; font-size: 0.95rem;">Acceso inmediato a los 6 módulos. Sin fecha de vencimiento. Sin excusas.</p>
+            <p style="color: #a89880; margin-bottom: 36px; font-size: 0.95rem;">Acceso inmediato a las 3 partes del curso. Sin fecha de vencimiento. Sin excusas.</p>
             <a href="https://pay.hotmart.com/P106063001C?checkoutMode=10" class="cta-btn" target="_blank" rel="noopener noreferrer">
                 Quiero crear y vender mi primera criatura →
             </a>
@@ -1054,6 +1107,14 @@
         </div>
     </footer>
 
+    <!-- NOTIFICACIONES DE COMPRA -->
+    <div id="purchase-notification">
+        <div class="pulse-dot"></div>
+        <div style="font-size: 0.82rem; line-height: 1.5; font-family: 'DM Sans', sans-serif;">
+            <span id="notif-text"></span>
+        </div>
+    </div>
+
     <script>
         // FAQ accordion
         document.querySelectorAll('.faq-q').forEach(q => {
@@ -1065,13 +1126,82 @@
             });
         });
 
-        // Hotmart parameters passthrough (SRC and fbclid) & Video Speed
+        // Hotmart parameters passthrough (SRC and fbclid) & Video Speed & Timer & Notifications
         document.addEventListener("DOMContentLoaded", function() {
             var heroVideo = document.querySelector(".video-frame video");
             if (heroVideo) {
                 heroVideo.playbackRate = 2.0;
             }
 
+            // Clock-based 15-minute countdown timer (resilient to page reloads and cookie block)
+            var timerEl = document.getElementById("timer");
+            if (timerEl) {
+                function updateTimer() {
+                    var now = new Date();
+                    var minutes = now.getMinutes();
+                    var seconds = now.getSeconds();
+                    
+                    var targetMinutes = Math.ceil((minutes + 1) / 15) * 15;
+                    var remMinutes = targetMinutes - 1 - minutes;
+                    var remSeconds = 60 - seconds;
+                    
+                    if (remSeconds === 60) {
+                        remSeconds = 0;
+                        remMinutes++;
+                    }
+                    
+                    var minStr = remMinutes < 10 ? "0" + remMinutes : remMinutes;
+                    var secStr = remSeconds < 10 ? "0" + remSeconds : remSeconds;
+                    timerEl.textContent = minStr + ":" + secStr;
+                }
+                updateTimer();
+                setInterval(updateTimer, 1000);
+            }
+
+            // Purchase notifications logic with randomized starting index and terracotta accents
+            var notifications = [
+                "<strong><span style='color: var(--terracotta);'>José</span> (Medellín, Colombia)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Alejandro</span> (Madrid, España)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Valeria</span> (Ciudad de México)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Mateo</span> (Buenos Aires, Argentina)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Santiago</span> (Santiago, Chile)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Javier</span> (Barcelona, España)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Andrés</span> (Lima, Perú)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Lucía</span> (Valencia, España)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Diego</span> (Guadalajara, México)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Camila</span> (Bogotá, Colombia)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Sofía</span> (Montevideo, Uruguay)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Sebastián</span> (San José, Costa Rica)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Isabella</span> (Quito, Ecuador)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Lucas</span> (Sevilla, España)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Martina</span> (Mendoza, Argentina)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Daniel</span> (Monterrey, México)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Elena</span> (Málaga, España)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Gabriel</span> (Cali, Colombia)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Florencia</span> (Viña del Mar, Chile)</strong> adquirió la formación y está a punto de crear su primer CRIATURA",
+                "<strong><span style='color: var(--terracotta);'>Nicolás</span> (Arequipa, Perú)</strong> adquirió la formación y está a punto de crear su primer CRIATURA"
+            ];
+            
+            var currentNotifIndex = Math.floor(Math.random() * notifications.length);
+            var notifBox = document.getElementById("purchase-notification");
+            var notifText = document.getElementById("notif-text");
+            
+            function showNextNotification() {
+                if (!notifBox || !notifText) return;
+                notifText.innerHTML = notifications[currentNotifIndex];
+                currentNotifIndex = (currentNotifIndex + 1) % notifications.length;
+                notifBox.classList.add("show");
+                setTimeout(function() {
+                    notifBox.classList.remove("show");
+                }, 6000);
+            }
+            
+            setTimeout(function() {
+                showNextNotification();
+                setInterval(showNextNotification, 25000);
+            }, 8000);
+
+            // Hotmart parameters passthrough (SRC and fbclid)
             var urlParams = new URLSearchParams(window.location.search);
             var srcParam = urlParams.get('src');
             var fbclidParam = urlParams.get('fbclid');
